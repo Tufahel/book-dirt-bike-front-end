@@ -1,44 +1,27 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUsers } from '../redux/actions/User';
 
-export default function User(props) {
-  const {
-    id, name,
-  } = props;
+export default function User() {
   const dispatch = useDispatch();
-  const [isShown, setIsShown] = useState(false);
+  const users = useSelector((state) => state.UsersReducer);
+  console.log(users);
+  dispatch(getUsers());
 
-  const handleClick = () => {
-    dispatch(getUsers());
-    setIsShown(true);
-  };
   return (
     <>
-      <button
-        key={1}
-        type="submit"
-        onClick={handleClick}
-      >
-        new user
-      </button>
-      {isShown && (
-        <div>
-          <p>User : </p>
-          <h3>
-            {id}
-          </h3>
-          <p>name : </p>
-          <h3>
-            {name}
-          </h3>
-        </div>
-      )}
+      {users.value.map((user) => (
+        <p key={user.id}>
+          user name
+          {' '}
+          {user.name}
+          {' '}
+          id
+          {user.id}
+          .
+        </p>
+      ))}
+
     </>
   );
 }
-User.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-};
