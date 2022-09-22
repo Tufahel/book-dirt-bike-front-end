@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { getUsers } from '../redux/actions/User';
 
-export default function User() {
+export default function User(props) {
+  const {
+    id, name,
+  } = props;
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
-  const users = useSelector((state) => state.UsersReducer);
 
   const handleClick = () => {
     dispatch(getUsers());
@@ -24,10 +27,18 @@ export default function User() {
         <div>
           <p>User : </p>
           <h3>
-            {users.value}
+            {id}
+          </h3>
+          <p>name : </p>
+          <h3>
+            {name}
           </h3>
         </div>
       )}
     </>
   );
 }
+User.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};

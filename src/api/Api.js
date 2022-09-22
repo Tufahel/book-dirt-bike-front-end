@@ -1,10 +1,7 @@
-import axios from 'axios';
-
 const fetchUserData = async () => {
-  await axios.get('http://localhost:3000/api/users')
-    .then((response) => {
-      console.log(response);
-    });
+  const res = await fetch('http://localhost:3000/api/users')
+    .then((response) => response.json());
+  return res;
 };
 
 export default fetchUserData;
