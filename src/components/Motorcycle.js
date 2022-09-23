@@ -20,6 +20,7 @@ export default function Motorcycle() {
           {' '}
           and &nbsp;
           {motorcycle.details}
+          {', '}
           is available for rent at &nbsp;
           {motorcycle.price}
           .
