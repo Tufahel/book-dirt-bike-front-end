@@ -10,6 +10,7 @@ export const getMotorcycles = () => async (dispatch) => {
       name: motorcycle.bike_name,
       id: motorcycle.user_id,
       details: motorcycle.details,
+      price: motorcycle.amount,
     })),
   });
 };
