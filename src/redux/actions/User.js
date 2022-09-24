@@ -8,6 +8,8 @@ export const actionTypes = {
   SIGNIN_SUCCESS: 'SIGNIN_SUCCESS',
   SIGNIN_REQUEST: 'SIGNIN_REQUEST',
   SIGNIN_FAILURE: 'SIGNIN_FAILURE',
+  SIGNOUT_SUCCESS: 'SIGNOUT_SUCCESS',
+  SIGNOUT_FAILURE: 'SIGNOUT_FAILURE',
 };
 
 export const getUsers = () => async (dispatch) => {
@@ -52,7 +54,7 @@ export const signIn = (userData, location) => async (dispatch) => {
         payload: res.data,
       });
       const result = res.headers.authorization;
-      localStorage.setItem('token', result.split(' ')[1]);
+      localStorage.setItem('token', result);
       localStorage.setItem('user', JSON.stringify(res.data));
 
       location('/motorcycle');
@@ -63,4 +65,19 @@ export const signIn = (userData, location) => async (dispatch) => {
         payload: error,
       });
     });
+};
+
+export const signOut = (location) => (dispatch) => {
+  if (localStorage.getItem('token')) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    dispatch({
+      type: actionTypes.SIGNOUT_SUCCESS,
+    });
+    location('/motorcycle');
+  } else {
+    dispatch({
+      type: actionTypes.SIGNOUT_FAILURE,
+    });
+  }
 };
