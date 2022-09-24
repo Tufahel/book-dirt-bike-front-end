@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import User from './components/User';
-import Motorcycle from './components/Motorcycle';
+import Motorcycle from './components/motorcycle/Motorcycle';
 
 const App = () => (
   <React.StrictMode>

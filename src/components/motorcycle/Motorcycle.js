@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMotorcycles } from '../redux/actions/Motorcycle';
+import { getMotorcycles } from '../../redux/actions/Motorcycle';
+import AddMotorcycle from './AddMotorcycle';
 
 export default function Motorcycle() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export default function Motorcycle() {
           .
         </p>
       ))}
+      <AddMotorcycle />
 
     </>
   );
