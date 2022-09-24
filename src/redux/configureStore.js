@@ -3,10 +3,15 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import { UsersReducer, SignupReducer } from './reducers/User';
+import { UsersReducer, SignupReducer, SigninReducer } from './reducers/User';
 import MotorcyclesReducer from './reducers/Motorcycle';
 
-const rootReducer = combineReducers({ SignupReducer, UsersReducer, MotorcyclesReducer });
+const rootReducer = combineReducers({
+  SignupReducer,
+  SigninReducer,
+  UsersReducer,
+  MotorcyclesReducer,
+});
 const store = createStore(rootReducer,
   compose(applyMiddleware(thunk, logger)));
 

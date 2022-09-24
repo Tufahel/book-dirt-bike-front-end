@@ -27,3 +27,14 @@ export const postSignupData = async (user) => {
   });
   return res.data;
 };
+
+export const postSigninData = async (user) => {
+  const res = await axios.post(`${URL}/users/sign_in`, {
+    user: {
+      username: user.username,
+      password: user.password,
+    },
+  });
+  console.log(res.data);
+  return res;
+};

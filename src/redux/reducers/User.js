@@ -3,17 +3,23 @@ import { actionTypes } from '../actions/User';
 const user = localStorage.getItem('user');
 const initialState = user
   ? {
+    isSignedIn: true,
     user,
     errorSignup: null,
+    errorSignin: null,
+    loadingSignin: false,
     loadingSignup: false,
   }
   : {
+    isSignedIn: false,
     user: null,
-    error_sign_up: null,
+    errorSignup: null,
+    errorSignin: null,
     loadingSignin: false,
+    loadingSignup: false,
   };
 
-export const UsersReducer = (state = initialState, action) => {
+export const UsersReducer = (state = [], action) => {
   switch (action.type) {
     case actionTypes.GET_USER:
       return { value: action.payload };
@@ -24,20 +30,20 @@ export const UsersReducer = (state = initialState, action) => {
 
 export const SignupReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.USER_REGISTER_SUCCESS:
+    case actionTypes.SIGNUP_SUCCESS:
       return {
         ...state,
         user: action.payload,
         loadingSignup: false,
         errorSignup: null,
       };
-    case actionTypes.USER_REGISTER_REQUEST:
+    case actionTypes.SIGNUP_REQUEST:
       return {
         ...state,
         loadingSignup: true,
         errorSignup: null,
       };
-    case actionTypes.USER_REGISTER_FAILURE:
+    case actionTypes.SIGNUP_FAILURE:
       return {
         ...state,
         user: null,
@@ -49,4 +55,31 @@ export const SignupReducer = (state = initialState, action) => {
   }
 };
 
-export default UsersReducer;
+export const SigninReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.SIGNIN_SUCCESS:
+      return {
+        ...state,
+        isSignedIn: true,
+        user: action.payload,
+        loadingSignin: false,
+        errorSignin: null,
+      };
+    case actionTypes.SIGNIN_REQUEST:
+      return {
+        ...state,
+        loadingSignin: true,
+        errorSignin: null,
+      };
+    case actionTypes.SIGNIN_FAILURE:
+      return {
+        ...state,
+        isSignedIn: false,
+        user: null,
+        loadingSignin: false,
+        errorSignin: action.payload,
+      };
+    default:
+      return state;
+  }
+};
