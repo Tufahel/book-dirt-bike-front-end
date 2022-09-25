@@ -1,4 +1,3 @@
-import jwtDecode from 'jwt-decode';
 import { fetchUserData, postSignupData, postSigninData } from '../../api/Api';
 
 export const actionTypes = {
@@ -62,7 +61,6 @@ export const signIn = (userData, location) => async (dispatch) => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data));
       console.log(res.data.token);
-      console.log(jwtDecode(res.data.token));
 
       location('/motorcycle');
     })
