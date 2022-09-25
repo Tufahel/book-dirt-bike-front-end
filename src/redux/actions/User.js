@@ -53,9 +53,10 @@ export const signIn = (userData, location) => async (dispatch) => {
         type: actionTypes.SIGNIN_SUCCESS,
         payload: res.data,
       });
-      const result = res.headers.authorization;
-      localStorage.setItem('token', result);
-      localStorage.setItem('user', JSON.stringify(res.data));
+      const token = JSON.stringify(res.data.user.id)
+      + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
+      + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
+      localStorage.setItem('user', token);
 
       location('/motorcycle');
     })
@@ -68,8 +69,7 @@ export const signIn = (userData, location) => async (dispatch) => {
 };
 
 export const signOut = (location) => (dispatch) => {
-  if (localStorage.getItem('token')) {
-    localStorage.removeItem('token');
+  if (localStorage.getItem('user')) {
     localStorage.removeItem('user');
     dispatch({
       type: actionTypes.SIGNOUT_SUCCESS,
