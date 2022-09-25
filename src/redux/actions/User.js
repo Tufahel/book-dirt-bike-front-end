@@ -1,3 +1,4 @@
+import jwtDecode from 'jwt-decode';
 import { fetchUserData, postSignupData, postSigninData } from '../../api/Api';
 
 export const actionTypes = {
@@ -53,11 +54,15 @@ export const signIn = (userData, location) => async (dispatch) => {
         type: actionTypes.SIGNIN_SUCCESS,
         payload: res.data,
       });
-      const token = JSON.stringify(res.data.user.id)
-      + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
-      + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
-      localStorage.setItem('user', token);
-      console.log(token);
+      // const token = JSON.stringify(res.data.user.id)
+      // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
+      // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
+      // console.log(token);
+
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('user', JSON.stringify(res.data));
+      console.log(res.data.token);
+      console.log(jwtDecode(res.data.token));
 
       location('/motorcycle');
     })
@@ -70,7 +75,8 @@ export const signIn = (userData, location) => async (dispatch) => {
 };
 
 export const signOut = (location) => (dispatch) => {
-  if (localStorage.getItem('user')) {
+  if (localStorage.getItem('token')) {
+    localStorage.removeItem('token');
     localStorage.removeItem('user');
     dispatch({
       type: actionTypes.SIGNOUT_SUCCESS,

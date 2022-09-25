@@ -22,12 +22,13 @@ export const getMotorcycles = () => async (dispatch) => {
 
 export const postMotorcycle = (data) => async (dispatch) => {
   const token = signIn();
-  const signInToken = localStorage.getItem('user', token);
+  const signInToken = localStorage.getItem('token', token);
+  console.log('token: ', signInToken);
   const newMotorcycle = {
     bike_name: data.name,
     details: data.details,
     amount: data.price,
-    user_id: signInToken,
+    user_id: data.user_id,
   };
   if (signInToken !== null) {
     axios.post(URL, newMotorcycle, {
