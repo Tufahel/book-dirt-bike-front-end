@@ -57,6 +57,7 @@ export const signIn = (userData, location) => async (dispatch) => {
       + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
       + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
       localStorage.setItem('user', token);
+      console.log(token);
 
       location('/motorcycle');
     })
