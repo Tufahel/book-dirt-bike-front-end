@@ -19,6 +19,7 @@ export const getMotorcycles = () => async (dispatch) => {
       id: motorcycle.user_id,
       details: motorcycle.details,
       price: motorcycle.amount,
+      bike_id: motorcycle.id,
     })),
   });
 };
@@ -44,25 +45,21 @@ export const createMotorcycle = (bike, location) => (dispatch) => {
 };
 
 export const deleteMotorcycle = (id) => (dispatch) => {
-  // console.log('id: ', id);
-  const motorcycle = fetchMotorcycleData().then((motorcycle) => {
-    const bike = motorcycle.filter((bike) => bike.id === id);
-    console.log('bike: ', bike);
-    deleteMotorcycleData(bike)
-      .then((bike) => {
-        dispatch({
-          type: actionTypes.MOTORCYCLE_DELETE_SUCCESS,
-          payload: bike,
-        });
-      })
-      .catch((error) => {
-        dispatch({
-          type: actionTypes.MOTORCYCLE_DELETE_FAILURE,
-          payload: error,
-        });
+  deleteMotorcycleData(id)
+    .then(() => {
+      dispatch({
+        type: actionTypes.MOTORCYCLE_DELETE_SUCCESS,
+        payload: id,
       });
-  });
-  console.log('motorcycle: ', motorcycle);
+      // location('/bikes');
+    })
+    .catch((error) => {
+      dispatch({
+        type: actionTypes.MOTORCYCLE_DELETE_FAILURE,
+        payload: error,
+      });
+    });
+};
   // const motorcycleId = localStorage.getItem('motorcycleid', motorcycle);
   // console.log('motorcycleId: ', motorcycleId);
   // console.log(userId);
@@ -79,4 +76,3 @@ export const deleteMotorcycle = (id) => (dispatch) => {
   //       payload: error,
   //     });
   //   });
-};

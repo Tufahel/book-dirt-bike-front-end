@@ -31,6 +31,19 @@ export const CreateMotorcycleReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+    case actionTypes.MOTORCYCLE_DELETE_SUCCESS:
+      return {
+        ...state,
+        bikes: state.bikes.filter((bike) => bike.id !== action.payload),
+        loading: false,
+        error: null,
+      };
+    case actionTypes.MOTORCYCLE_DELETE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }

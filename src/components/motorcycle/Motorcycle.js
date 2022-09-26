@@ -16,6 +16,7 @@ export default function Motorcycle() {
   }, []);
 
   const handleDelete = (id) => {
+    console.log(id);
     dispatch(deleteMotorcycle(id));
   };
 
@@ -31,7 +32,7 @@ export default function Motorcycle() {
           is available for rent at &nbsp;
           {motorcycle.price}
           .
-          <button type="button" onClick={() => handleDelete()}>DELETE</button>
+          <button type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
         </p>
       ))}
 
