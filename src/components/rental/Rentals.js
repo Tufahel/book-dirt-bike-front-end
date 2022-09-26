@@ -20,7 +20,10 @@ export default function Rental() {
           and will be booked on &nbsp;
           {rental.booked}
           {', '}
-          will be returned on &nbsp;
+          in &nbsp;
+          {rental.city}
+          {', '}
+          and will be returned on &nbsp;
           {rental.return}
           .
         </p>
