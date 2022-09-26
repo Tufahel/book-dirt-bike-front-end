@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getMotorcycles } from '../../redux/actions/Motorcycle';
-import AddMotorcycle from './AddMotorcycle';
+// import AddMotorcycle from './AddMotorcycle';
 
 export default function Motorcycle() {
   const dispatch = useDispatch();
   const motorcycles = useSelector((state) => state.MotorcyclesReducer);
+  const navigate = useNavigate();
+  const user = localStorage.getItem('user');
   // console.log(motorcycles);
   // dispatch(getMotorcycles(), []);
   useEffect(() => {
@@ -26,7 +29,16 @@ export default function Motorcycle() {
           .
         </p>
       ))}
-      <AddMotorcycle />
+      {
+        user && (
+          <button
+            type="button"
+            onClick={() => navigate('/addmotorcycle')}
+          >
+            Add Bike
+          </button>
+        )
+      }
 
     </>
   );
