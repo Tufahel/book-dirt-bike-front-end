@@ -9,7 +9,7 @@ export default function Navigation() {
   const navigate = useNavigate();
 
   function handleSignout() {
-    dispatch(signOut(navigate));
+    dispatch(signOut(navigate('/')));
   }
 
   return (

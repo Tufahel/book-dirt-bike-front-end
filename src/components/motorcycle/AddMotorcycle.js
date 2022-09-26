@@ -24,7 +24,7 @@ const AddMotorcycle = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createMotorcycle(motorcycle, navigate, e));
+    dispatch(createMotorcycle(motorcycle, navigate('/motorcycle'), e));
   };
 
   return (
