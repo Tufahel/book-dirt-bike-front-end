@@ -1,4 +1,4 @@
-import { fetchRentalsData,addNewRental } from '../../api/Api';
+import { fetchRentalsData, addNewRental } from '../../api/Api';
 import { signIn } from './User';
 
 export const GET_RENTALS = 'GET_RENTALS';
@@ -7,7 +7,7 @@ export const actionTypes = {
   RENTAL_CREATE_SUCCESS: 'RENTAL_CREATE_SUCCESS',
   ENTAL_CREATE_FAILURE: 'RENTAL_CREATE_FAILURE',
   RENTAL_DELETE_SUCCESS: 'RENTAL_DELETE_SUCCESS',
- RENTAL_DELETE_FAILURE: 'RENTAL_DELETE_FAILURE',
+  RENTAL_DELETE_FAILURE: 'RENTAL_DELETE_FAILURE',
 };
 
 export const getRentals = () => async (dispatch) => {
@@ -25,15 +25,15 @@ export const getRentals = () => async (dispatch) => {
   });
 };
 
-export const createRental = (bike, location) => (dispatch) => {
+export const createRental = (rent, location) => (dispatch) => {
   const user = signIn();
   const userId = localStorage.getItem('userid', user);
   // console.log('user: ', userId);
-  addNewRental(bike, userId)
-    .then((bike) => {
+  addNewRental(rent, userId)
+    .then((rent) => {
       dispatch({
         type: actionTypes.RENTAL_CREATE_SUCCESS,
-        payload: bike,
+        payload: rent,
       });
       location('/rental');
     })

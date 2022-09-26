@@ -1,8 +1,8 @@
 import { GET_RENTALS, actionTypes } from '../actions/Rentals';
 
 const initialState = {
-  rentals: [],
-  rental: {},
+  rents: [],
+  rent: {},
   loading: false,
   error: null,
 };
@@ -23,7 +23,7 @@ export const CreateRentalReducer = (state = initialState, action) => {
     case actionTypes.RENTAL_CREATE_SUCCESS:
       return {
         ...state,
-        rentals: [...state.rentals, action.payload],
+        rents: [...state.rents, action.payload],
         loading: false,
         error: null,
       };
