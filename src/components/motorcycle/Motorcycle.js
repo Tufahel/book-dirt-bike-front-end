@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getMotorcycles } from '../../redux/actions/Motorcycle';
+import { getMotorcycles, deleteMotorcycle } from '../../redux/actions/Motorcycle';
 // import AddMotorcycle from './AddMotorcycle';
 
 export default function Motorcycle() {
@@ -15,6 +15,10 @@ export default function Motorcycle() {
     dispatch(getMotorcycles());
   }, []);
 
+  const handleDelete = (id) => {
+    dispatch(deleteMotorcycle(id));
+  };
+
   return (
     <>
       {motorcycles.value?.map((motorcycle) => (
@@ -27,8 +31,10 @@ export default function Motorcycle() {
           is available for rent at &nbsp;
           {motorcycle.price}
           .
+          <button type="button" onClick={() => handleDelete()}>DELETE</button>
         </p>
       ))}
+
       {
         user && (
           <button
@@ -38,6 +44,7 @@ export default function Motorcycle() {
             Add Bike
           </button>
         )
+
       }
 
     </>

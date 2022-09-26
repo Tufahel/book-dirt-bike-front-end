@@ -64,3 +64,15 @@ export const postNewMotorcycle = async (data, id) => {
 
   return response.data;
 };
+
+export const deleteMotorcycleData = async (id) => {
+  const res = await axios.delete(`${URL}/api/motorcycles/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken()}`,
+    },
+  })
+    .then((response) => response.json());
+  return res;
+};
