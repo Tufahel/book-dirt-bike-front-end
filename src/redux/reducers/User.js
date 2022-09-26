@@ -83,3 +83,28 @@ export const SigninReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export const SignoutReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.SIGNOUT_SUCCESS:
+      return {
+        ...state,
+        isSignedIn: false,
+        user: null,
+        loadingSignin: false,
+        loadingSignup: false,
+        errorSignin: null,
+        errorSignup: null,
+      };
+    case actionTypes.SIGNOUT_FAILURE:
+      return {
+        ...state,
+        isSignedIn: true,
+        user: action.payload,
+        errorSignin: null,
+        errorSignup: null,
+      };
+    default:
+      return state;
+  }
+};

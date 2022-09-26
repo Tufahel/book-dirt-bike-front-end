@@ -8,6 +8,8 @@ export const actionTypes = {
   SIGNIN_SUCCESS: 'SIGNIN_SUCCESS',
   SIGNIN_REQUEST: 'SIGNIN_REQUEST',
   SIGNIN_FAILURE: 'SIGNIN_FAILURE',
+  SIGNOUT_SUCCESS: 'SIGNOUT_SUCCESS',
+  SIGNOUT_FAILURE: 'SIGNOUT_FAILURE',
 };
 
 export const getUsers = () => async (dispatch) => {
@@ -51,9 +53,19 @@ export const signIn = (userData, location) => async (dispatch) => {
         type: actionTypes.SIGNIN_SUCCESS,
         payload: res.data,
       });
-      const result = res.headers.authorization;
-      localStorage.setItem('token', result.split(' ')[1]);
+      // const token = JSON.stringify(res.data.user.id)
+      // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
+      // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
+      // console.log(token);
+
+      localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data));
+      localStorage.setItem('userid', JSON.stringify(res.data.user.id));
+      console.log(res.data.token);
+
+      // const token = JSON.stringify(res.data.user.id)
+      // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
+      // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
 
       location('/motorcycle');
     })
@@ -63,4 +75,19 @@ export const signIn = (userData, location) => async (dispatch) => {
         payload: error,
       });
     });
+};
+
+export const signOut = (location) => (dispatch) => {
+  if (localStorage.getItem('token')) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    dispatch({
+      type: actionTypes.SIGNOUT_SUCCESS,
+    });
+    location('/motorcycle');
+  } else {
+    dispatch({
+      type: actionTypes.SIGNOUT_FAILURE,
+    });
+  }
 };

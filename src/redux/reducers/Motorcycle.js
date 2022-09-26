@@ -1,6 +1,13 @@
-import { GET_MOTORCYCLE } from '../actions/Motorcycle';
+import { GET_MOTORCYCLE, actionTypes } from '../actions/Motorcycle';
 
-const MotorcyclesReducer = (state = [], action) => {
+const initialState = {
+  bikes: [],
+  bike: {},
+  loading: false,
+  error: null,
+};
+
+export const MotorcyclesReducer = (state = [], action) => {
   switch (action.type) {
     case GET_MOTORCYCLE:
       return { value: action.payload };
@@ -9,4 +16,22 @@ const MotorcyclesReducer = (state = [], action) => {
   }
 };
 
-export default MotorcyclesReducer;
+export const CreateMotorcycleReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.MOTORCYCLE_CREATE_SUCCESS:
+      return {
+        ...state,
+        bikes: [...state.bikes, action.payload],
+        loading: false,
+        error: null,
+      };
+    case actionTypes.MOTORCYCLE_CREATE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
