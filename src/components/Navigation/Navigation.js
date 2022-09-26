@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from '../../redux/actions/User';
 
-export default function Navigation() {
+function Navigation() {
   const { user } = useSelector((state) => state.SignoutReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -80,3 +80,5 @@ export default function Navigation() {
     </>
   );
 }
+
+export default Navigation;

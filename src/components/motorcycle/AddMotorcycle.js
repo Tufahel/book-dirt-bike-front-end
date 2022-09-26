@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createMotorcycle } from '../../redux/actions/Motorcycle';
+import Navigation from '../Navigation/Navigation';
 
 const AddMotorcycle = () => {
   const motorcycles = useSelector((state) => state.CreateMotorcyclereducer);
@@ -29,6 +30,7 @@ const AddMotorcycle = () => {
 
   return (
     <>
+      <Navigation />
       <div className="">
         <section className="form-page">
           <p className="text-center" style={{ color: 'rgb(100 116 139)' }}>Add Bike </p>

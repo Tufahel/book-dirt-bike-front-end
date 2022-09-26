@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getMotorcycles, deleteMotorcycle } from '../../redux/actions/Motorcycle';
 // import AddMotorcycle from './AddMotorcycle';
+import Navigation from '../Navigation/Navigation';
 
 export default function Motorcycle() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export default function Motorcycle() {
 
   return (
     <>
+      <Navigation />
       {motorcycles.value?.map((motorcycle) => (
         <p key={motorcycle.id}>
           bike type: &nbsp;
