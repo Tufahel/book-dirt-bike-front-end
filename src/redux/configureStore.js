@@ -3,6 +3,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import RentalsReducer from './reducers/Rentals';
 import {
   UsersReducer, SignupReducer, SigninReducer, SignoutReducer,
 } from './reducers/User';
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   SignoutReducer,
   UsersReducer,
   MotorcyclesReducer,
+  RentalsReducer,
   CreateMotorcycleReducer,
 });
 const store = createStore(rootReducer,

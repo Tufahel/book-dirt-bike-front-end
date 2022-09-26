@@ -14,6 +14,12 @@ export const fetchMotorcycleData = async () => {
   return res;
 };
 
+export const fetchRentalsData = async () => {
+  const res = await fetch(`${URL}/api/rentals`)
+    .then((response) => response.json());
+  return res;
+};
+
 export const postSignupData = async (user) => {
   const res = await axios.post(`${URL}/users`, {
     user: {
