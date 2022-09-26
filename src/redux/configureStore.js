@@ -6,7 +6,7 @@ import logger from 'redux-logger';
 import {
   UsersReducer, SignupReducer, SigninReducer, SignoutReducer,
 } from './reducers/User';
-import MotorcyclesReducer from './reducers/Motorcycle';
+import { MotorcyclesReducer, CreateMotorcycleReducer } from './reducers/Motorcycle';
 
 const rootReducer = combineReducers({
   SignupReducer,
@@ -14,6 +14,7 @@ const rootReducer = combineReducers({
   SignoutReducer,
   UsersReducer,
   MotorcyclesReducer,
+  CreateMotorcycleReducer,
 });
 const store = createStore(rootReducer,
   compose(applyMiddleware(thunk, logger)));

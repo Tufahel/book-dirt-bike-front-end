@@ -38,3 +38,29 @@ export const postSigninData = async (user) => {
   console.log(res.data);
   return res;
 };
+
+const authToken = () => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    return token;
+  }
+  return {};
+};
+
+export const postNewMotorcycle = async (data, id) => {
+  const newMotorcycle = {
+    bike_name: data.bike_name,
+    details: data.details,
+    amount: data.amount,
+    image: data.image,
+    user_id: id,
+  };
+
+  const response = await axios.post(`${URL}/api/motorcycles`, newMotorcycle, {
+    headers: {
+      Authorization: `Bearer ${authToken()}`,
+    },
+  });
+
+  return response.data;
+};

@@ -60,7 +60,12 @@ export const signIn = (userData, location) => async (dispatch) => {
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data));
+      localStorage.setItem('userid', JSON.stringify(res.data.user.id));
       console.log(res.data.token);
+
+      // const token = JSON.stringify(res.data.user.id)
+      // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
+      // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
 
       location('/motorcycle');
     })

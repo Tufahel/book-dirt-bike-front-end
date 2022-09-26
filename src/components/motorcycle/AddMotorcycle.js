@@ -1,75 +1,99 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { postMotorcycle } from '../../redux/actions/Motorcycle';
+import { createMotorcycle } from '../../redux/actions/Motorcycle';
 
 const AddMotorcycle = () => {
-  const motorcycle = useSelector((state) => state.MotorcyclesReducer);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const motorcycles = useSelector((state) => state.CreateMotorcyclereducer);
+  const [motorcycle, setMotorcycle] = useState({
+    bike_name: '',
+    details: '',
+    amount: '',
+    image: '',
+  });
 
-  const [name, setName] = useState('');
-  const [details, setDetails] = useState('');
-  const [price, setPrice] = useState('');
+  const handleChange = (e) => {
+    setMotorcycle({
+      ...motorcycle,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const dispatch = useDispatch(motorcycles);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postMotorcycle({ name, details, price },
-      navigate('/motorcycle')));
-    setName('');
-    setDetails('');
-    setPrice('');
+    dispatch(createMotorcycle(motorcycle, navigate, e));
   };
+
   return (
-    motorcycle && (
-      <div>
-        <h2>Add Motorcycle</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Motorcycle Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Motorcycle Details"
-            value={details}
-            onChange={(e) => setDetails(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Motorcycle Price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-          <button type="submit">Add Motorcycle</button>
-        </form>
+    <>
+      <div className="">
+        <section className="form-page">
+          <p className="text-center" style={{ color: 'rgb(100 116 139)' }}>Add Bike </p>
+          <hr />
+          <form
+            onSubmit={handleSubmit}
+            className=""
+          >
+            <input
+              className="input-field"
+              placeholder="Bike Name"
+              type="text"
+              name="bike_name"
+              minLength="1"
+              maxLength="100"
+              onChange={handleChange}
+              value={motorcycle.bike_name}
+              required
+            />
+
+            <input
+              className="input-field"
+              placeholder="Price per hour"
+              type="number"
+              name="amount"
+              value={motorcycle.amount}
+              minLength="1"
+              maxLength="100"
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              className="input-field"
+              placeholder="image"
+              type="text"
+              name="image"
+              value={motorcycle.image}
+              minLength="1"
+              maxLength="100"
+              onChange={handleChange}
+              required
+            />
+
+            <textarea
+              className="input-field"
+              placeholder="Details"
+              type="text"
+              name="details"
+              value={motorcycle.details}
+              minLength="1"
+              maxLength="100"
+              onChange={handleChange}
+              required
+            />
+            <button
+              className=""
+              type="submit"
+            >
+              Create Bike
+            </button>
+          </form>
+        </section>
       </div>
-    )
-    // <div>
-    //   <form onSubmit={handleSubmit}>
-    //     <input
-    //       type="text"
-    //       placeholder="bike name"
-    //       value={name}
-    //       onChange={(e) => setName(e.target.value)}
-    //     />
-    //     <input
-    //       type="text"
-    //       placeholder="bike details"
-    //       value={details}
-    //       onChange={(e) => setDetails(e.target.value)}
-    //     />
-    //     <input
-    //       type="text"
-    //       placeholder="bike price"
-    //       value={price}
-    //       onChange={(e) => setPrice(e.target.value)}
-    //     />
-    //     <button type="submit">Add Motorcycle</button>
-    //   </form>
-    // </div>
+    </>
   );
 };
 
