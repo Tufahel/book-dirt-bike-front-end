@@ -1,4 +1,11 @@
-import { GET_RENTALS } from '../actions/Rentals';
+import { GET_RENTALS, actionTypes } from '../actions/Rentals';
+
+const initialState = {
+  rentals: [],
+  rental: {},
+  loading: false,
+  error: null,
+};
 
 const RentalsReducer = (state = [], action) => {
   switch (action.type) {
@@ -10,3 +17,23 @@ const RentalsReducer = (state = [], action) => {
 };
 
 export default RentalsReducer;
+
+export const CreateRentalReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.RENTAL_CREATE_SUCCESS:
+      return {
+        ...state,
+        rentals: [...state.rentals, action.payload],
+        loading: false,
+        error: null,
+      };
+    case actionTypes.RENTAL_CREATE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
