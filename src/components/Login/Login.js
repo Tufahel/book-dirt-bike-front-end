@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ThreeDots } from 'react-loader-spinner';
 import { signIn } from '../../redux/actions/User';
+import Navigation from '../Navigation/Navigation';
+import './Login.css';
 
 const Login = () => {
   const { errorSignin = null, loadingSignin = false } = useSelector((state) => state.SigninReducer);
@@ -25,13 +27,15 @@ const Login = () => {
     }));
   };
   return (
-    <div className="">
-      <h1 className="">Login</h1>
-      <form
-        className=""
-        onSubmit={handleLogin}
-      >
-        { loadingSignin && (
+    <>
+      <Navigation />
+      <div className="main-login">
+        <h1 className="">Login</h1>
+        <form
+          className="form-container"
+          onSubmit={handleLogin}
+        >
+          { loadingSignin && (
           <div className="">
             <div className="">
               <ThreeDots
@@ -45,21 +49,22 @@ const Login = () => {
               />
             </div>
           </div>
-        )}
+          )}
 
-        { errorSignin && (
+          { errorSignin && (
           <p className="text-red-500 font-italic">Invalid email/password</p>
-        )}
-        <input onChange={handleOnChange} className="" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
-        <input onChange={handleOnChange} className="" type="password" name="password" id="login-password-field" placeholder="Password" required />
-        <small className="">{}</small>
-        <span className="">
-          Not a member?
-          <NavLink className="" to="/signup">Signup</NavLink>
-        </span>
-        <input className="" type="submit" value="Login" />
-      </form>
-    </div>
+          )}
+          <input onChange={handleOnChange} className="" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
+          <input onChange={handleOnChange} className="" type="password" name="password" id="login-password-field" placeholder="Password" required />
+          <small className="">{}</small>
+          <span className="">
+            Not a member?
+            <NavLink className="" to="/signup">Signup</NavLink>
+          </span>
+          <input className="" type="submit" value="Login" />
+        </form>
+      </div>
+    </>
   );
 };
 

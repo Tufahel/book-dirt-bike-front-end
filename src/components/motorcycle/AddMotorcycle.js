@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createMotorcycle } from '../../redux/actions/Motorcycle';
+import Navigation from '../Navigation/Navigation';
+import './Motorcycles.css';
 
 const AddMotorcycle = () => {
-  const motorcycles = useSelector((state) => state.CreateMotorcyclereducer);
+  const motorcycles = useSelector((state) => state.MotorcycleReducer);
   const [motorcycle, setMotorcycle] = useState({
     bike_name: '',
     details: '',
@@ -24,18 +26,19 @@ const AddMotorcycle = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createMotorcycle(motorcycle, navigate('/motorcycle'), e));
+    dispatch(createMotorcycle(motorcycle, navigate('/motorcycles'), e));
   };
 
   return (
     <>
-      <div className="">
-        <section className="form-page">
+      <Navigation />
+      <div className="form-section">
+        <section className="">
           <p className="text-center" style={{ color: 'rgb(100 116 139)' }}>Add Bike </p>
           <hr />
           <form
             onSubmit={handleSubmit}
-            className=""
+            className="form-page"
           >
             <input
               className="input-field"
@@ -64,7 +67,7 @@ const AddMotorcycle = () => {
             <input
               className="input-field"
               placeholder="image"
-              type="text"
+              type="url"
               name="image"
               value={motorcycle.image}
               minLength="1"

@@ -1,52 +1,41 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { getMotorcycles, deleteMotorcycle } from '../../redux/actions/Motorcycle';
-// import AddMotorcycle from './AddMotorcycle';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getMotorcycle } from '../../redux/actions/Motorcycle';
 
-export default function Motorcycle() {
+const Motorcycle = (props) => {
+  const {
+    id,
+  } = props;
   const dispatch = useDispatch();
-  const motorcycles = useSelector((state) => state.MotorcyclesReducer);
-  const navigate = useNavigate();
-  const user = localStorage.getItem('user');
-  // console.log(motorcycles);
-  // dispatch(getMotorcycles(), []);
-  useEffect(() => {
-    dispatch(getMotorcycles());
-  }, []);
 
-  const handleDelete = (id) => {
-    dispatch(deleteMotorcycle(id));
+  const handleGet = (id) => {
+    dispatch(getMotorcycle(id));
+    window.location.reload(false);
   };
 
   return (
-    <>
-      {motorcycles.value?.map((motorcycle) => (
-        <p key={motorcycle.id}>
-          bike type: &nbsp;
-          {motorcycle.name}
-          {' '}
-          and &nbsp;
-          {motorcycle.details}
-          is available for rent at &nbsp;
-          {motorcycle.price}
-          .
-          <button type="button" onClick={() => handleDelete()}>DELETE</button>
-        </p>
-      ))}
+    <div>
+      <button
+        key={id}
+        type="button"
+        className="btn"
+        onClick={() => {
+          handleGet(id);
+        }}
+      >
+        <NavLink to="/details" className="">
+          Details
+        </NavLink>
+      </button>
 
-      {
-        user && (
-          <button
-            type="button"
-            onClick={() => navigate('/addmotorcycle')}
-          >
-            Add Bike
-          </button>
-        )
-
-      }
-
-    </>
+    </div>
   );
-}
+};
+
+Motorcycle.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
+export default Motorcycle;
