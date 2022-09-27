@@ -39,7 +39,7 @@ function Navigation() {
               user && (
                 <>
                   <li className="" key="link2">
-                    <NavLink to="/motorcycle" className="link">Add Bike</NavLink>
+                    <NavLink to="/addmotorcycle" className="link">Add Bike</NavLink>
                   </li>
                   <li className="" key="link3">
                     <NavLink to="/rentals" className="link">Reservations</NavLink>

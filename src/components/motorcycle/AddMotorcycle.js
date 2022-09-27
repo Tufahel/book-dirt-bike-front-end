@@ -67,7 +67,7 @@ const AddMotorcycle = () => {
             <input
               className="input-field"
               placeholder="image"
-              type="text"
+              type="url"
               name="image"
               value={motorcycle.image}
               minLength="1"
