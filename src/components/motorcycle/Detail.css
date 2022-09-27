@@ -23,6 +23,5 @@ h3 {
 .bike__details {
   display: flex;
   justify-content: space-between;
-  margin-left: 25%;
   padding: 10px;
 }

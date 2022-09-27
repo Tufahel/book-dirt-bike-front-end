@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createMotorcycle } from '../../redux/actions/Motorcycle';
 import Navigation from '../Navigation/Navigation';
+import './Motorcycle.css';
 
 const AddMotorcycle = () => {
   const motorcycles = useSelector((state) => state.CreateMotorcyclereducer);
@@ -31,13 +32,13 @@ const AddMotorcycle = () => {
   return (
     <>
       <Navigation />
-      <div className="">
-        <section className="form-page">
+      <div className="form-section">
+        <section className="">
           <p className="text-center" style={{ color: 'rgb(100 116 139)' }}>Add Bike </p>
           <hr />
           <form
             onSubmit={handleSubmit}
-            className=""
+            className="form-page"
           >
             <input
               className="input-field"

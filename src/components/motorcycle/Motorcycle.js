@@ -45,7 +45,7 @@ function Motorcycle() {
           >
             <div key={motorcycle.id} className="bike__container">
               <div className="bike__image">
-                <img src={motorcycle.image} alt="bike" />
+                <img className="imagebike" src={motorcycle.image} alt="bike" />
               </div>
               <div className="bike__details">
                 <h3>{motorcycle.name}</h3>

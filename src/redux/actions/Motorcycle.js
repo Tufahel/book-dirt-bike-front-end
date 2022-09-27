@@ -19,6 +19,7 @@ export const getMotorcycles = () => async (dispatch) => {
       id: motorcycle.user_id,
       details: motorcycle.details,
       price: motorcycle.amount,
+      image: motorcycle.image,
     })),
   });
 };
