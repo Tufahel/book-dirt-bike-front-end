@@ -1,23 +1,28 @@
-import { GET_MOTORCYCLE, actionTypes } from '../actions/Motorcycle';
+import { actionTypes } from '../actions/Motorcycle';
 
 const initialState = {
   bikes: [],
-  bike: {},
+  bike: [],
   loading: false,
   error: null,
 };
 
-export const MotorcyclesReducer = (state = [], action) => {
+export const MotorcycleReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOTORCYCLE:
-      return { value: action.payload };
-    default:
-      return state;
-  }
-};
-
-export const CreateMotorcycleReducer = (state = initialState, action) => {
-  switch (action.type) {
+    case actionTypes.MOTORCYCLES_GET_SUCCESS:
+      return {
+        ...state,
+        bikes: action.payload,
+        loading: false,
+        error: null,
+      };
+    case actionTypes.MOTORCYCLES_GET_FAILURE:
+      return {
+        ...state,
+        bikes: [],
+        loading: false,
+        error: null,
+      };
     case actionTypes.MOTORCYCLE_CREATE_SUCCESS:
       return {
         ...state,
@@ -30,6 +35,40 @@ export const CreateMotorcycleReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
+      };
+    case actionTypes.MOTORCYCLE_DELETE_SUCCESS:
+      return {
+        ...state,
+        bikes: state.bikes.filter((bike) => bike.id !== action.payload),
+        loading: false,
+        error: null,
+      };
+    case actionTypes.MOTORCYCLE_DELETE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const MotorcycleGetReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.MOTORCYCLE_GET_SUCCESS:
+      return {
+        ...state,
+        bike: action.payload,
+        loading: false,
+        error: null,
+      };
+    case actionTypes.MOTORCYCLE_GET_FAILURE:
+      return {
+        ...state,
+        bike: action.payload,
+        loading: false,
+        error: null,
       };
     default:
       return state;

@@ -1,0 +1,27 @@
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.bike__container {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  column-gap: 2rem;
+  align-items: center;
+  padding-right: 10%;
+}
+
+.bike__image {
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.bike__details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}

@@ -67,7 +67,7 @@ export const signIn = (userData, location) => async (dispatch) => {
       // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
       // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
 
-      location('/motorcycle');
+      location('/motorcycles');
     })
     .catch((error) => {
       dispatch({
@@ -81,10 +81,11 @@ export const signOut = (location) => (dispatch) => {
   if (localStorage.getItem('token')) {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('userid');
     dispatch({
       type: actionTypes.SIGNOUT_SUCCESS,
     });
-    location('/motorcycle');
+    location('/motorcycles');
   } else {
     dispatch({
       type: actionTypes.SIGNOUT_FAILURE,
