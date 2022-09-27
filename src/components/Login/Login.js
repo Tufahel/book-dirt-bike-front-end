@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { ThreeDots } from 'react-loader-spinner';
 import { signIn } from '../../redux/actions/User';
 import Navigation from '../Navigation/Navigation';
+import './Login.css';
 
 const Login = () => {
   const { errorSignin = null, loadingSignin = false } = useSelector((state) => state.SigninReducer);
@@ -28,10 +29,10 @@ const Login = () => {
   return (
     <>
       <Navigation />
-      <div className="">
+      <div className="main-login">
         <h1 className="">Login</h1>
         <form
-          className=""
+          className="form-container"
           onSubmit={handleLogin}
         >
           { loadingSignin && (
