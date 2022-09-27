@@ -41,6 +41,7 @@ function Motorcycle() {
             onClick={setModalIsOpenToTrue}
             key={motorcycle.id}
             type="button"
+            className="bike__button"
           >
             <div key={motorcycle.id} className="bike__container">
               <div className="bike__image">
