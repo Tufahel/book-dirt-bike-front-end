@@ -1,8 +1,6 @@
 import React from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { getMotorcycles } from '../../redux/actions/Motorcycle';
 import './Detail.css';
 
 const Details = () => {

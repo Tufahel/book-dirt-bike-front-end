@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import './Motorcycle.css';
 import { getMotorcycles, deleteMotorcycle } from '../../redux/actions/Motorcycle';
 import Details from './Details';
-// import AddMotorcycle from './AddMotorcycle';
 import Navigation from '../Navigation/Navigation';
 
 function Motorcycle() {
@@ -14,8 +13,6 @@ function Motorcycle() {
   const motorcycles = useSelector((state) => state.MotorcyclesReducer);
   const navigate = useNavigate();
   const user = localStorage.getItem('user');
-  // console.log(motorcycles);
-  // dispatch(getMotorcycles(), []);
   useEffect(() => {
     dispatch(getMotorcycles());
   }, []);
