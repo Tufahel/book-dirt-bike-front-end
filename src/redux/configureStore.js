@@ -3,7 +3,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import RentalsReducer from './reducers/Rentals';
+import { RentalsReducer, CreateRentalReducer } from './reducers/Rentals';
 import {
   UsersReducer, SignupReducer, SigninReducer, SignoutReducer,
 } from './reducers/User';
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   MotorcyclesReducer,
   RentalsReducer,
   CreateMotorcycleReducer,
+  CreateRentalReducer,
 });
 const store = createStore(rootReducer,
   compose(applyMiddleware(thunk, logger)));

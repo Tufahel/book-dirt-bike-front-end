@@ -7,7 +7,7 @@ const initialState = {
   error: null,
 };
 
-const RentalsReducer = (state = [], action) => {
+export const RentalsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_RENTALS:
       return { value: action.payload };
@@ -15,8 +15,6 @@ const RentalsReducer = (state = [], action) => {
       return state;
   }
 };
-
-export default RentalsReducer;
 
 export const CreateRentalReducer = (state = initialState, action) => {
   switch (action.type) {
