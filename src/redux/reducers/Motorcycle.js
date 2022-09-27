@@ -7,7 +7,7 @@ const initialState = {
   error: null,
 };
 
-export const MotorcycleReducer = (state = initialState, action) => {
+const MotorcycleReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.MOTORCYCLES_GET_SUCCESS:
       return {
@@ -54,23 +54,4 @@ export const MotorcycleReducer = (state = initialState, action) => {
   }
 };
 
-export const MotorcycleGetReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case actionTypes.MOTORCYCLE_GET_SUCCESS:
-      return {
-        ...state,
-        bike: action.payload,
-        loading: false,
-        error: null,
-      };
-    case actionTypes.MOTORCYCLE_GET_FAILURE:
-      return {
-        ...state,
-        bike: action.payload,
-        loading: false,
-        error: null,
-      };
-    default:
-      return state;
-  }
-};
+export default MotorcycleReducer;

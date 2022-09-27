@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { getMotorcycle } from '../../redux/actions/Motorcycle';
 
 const Motorcycle = (props) => {
   const {
     id,
   } = props;
-  const dispatch = useDispatch();
 
-  const handleGet = (id) => {
-    dispatch(getMotorcycle(id));
-    window.location.reload(false);
+  const setBikeId = (id) => {
+    localStorage.setItem('bikeid', id);
   };
 
   return (
@@ -22,7 +18,7 @@ const Motorcycle = (props) => {
         type="button"
         className="btn"
         onClick={() => {
-          handleGet(id);
+          setBikeId(id);
         }}
       >
         <NavLink to="/details" className="">
