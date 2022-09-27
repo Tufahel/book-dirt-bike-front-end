@@ -63,7 +63,7 @@ const AddRental = () => {
               required
             />
 
-            <textarea
+            <input
               className="input-field"
               placeholder="Return"
               type="date"
