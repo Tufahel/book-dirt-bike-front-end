@@ -28,7 +28,6 @@ export const getMotorcycles = () => async (dispatch) => {
           bike_id: motorcycle.id,
         })),
       });
-      localStorage.setItem('bikes', JSON.stringify(motorcycles));
     })
     .catch((error) => {
       dispatch({
@@ -81,6 +80,8 @@ export const getMotorcycle = (id) => (dispatch) => {
         type: actionTypes.MOTORCYCLE_GET_SUCCESS,
         payload: bike,
       });
+      localStorage.setItem('bikes', JSON.stringify(bike.data));
+      localStorage.setItem('bikeid', bike.data.id);
     })
     .catch((error) => {
       dispatch({

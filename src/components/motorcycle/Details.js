@@ -4,35 +4,29 @@ import './Details.css';
 const Details = () => {
   // const motorcycles = localStorage.getItem('bikes');
   const motorcycles = JSON.parse(localStorage.getItem('bikes'));
-  const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
-  const filtered = motorcycles.filter((motorcycle) => motorcycle.id === bikeId);
+  const bikeId = localStorage.getItem('bikeid');
   console.log('all bikes: ', motorcycles);
-  console.log('filtered: ', filtered);
   console.log('only id: ', bikeId);
 
   return (
     <div>
-      {filtered.map((motorcycle) => (
-        <div key={motorcycle.id}>
-          <h2>
-            name:
-            {' '}
-            {motorcycle.bike_name}
-          </h2>
-          <h2>
-            price:
-            {' '}
-            {motorcycle.amount}
-          </h2>
-          <h2>
-            details:
-            {' '}
-            {motorcycle.details}
-          </h2>
+      <h2>
+        name:
+        {' '}
+        {motorcycles.bike_name}
+      </h2>
+      <h2>
+        price:
+        {' '}
+        {motorcycles.amount}
+      </h2>
+      <h2>
+        details:
+        {' '}
+        {motorcycles.details}
+      </h2>
 
-          <hr />
-        </div>
-      ))}
+      <hr />
     </div>
   );
 };
