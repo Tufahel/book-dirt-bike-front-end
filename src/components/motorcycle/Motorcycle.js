@@ -51,7 +51,14 @@ function Motorcycle() {
                 <h3>{motorcycle.name}</h3>
                 <p>{motorcycle.details}</p>
                 <p>{motorcycle.price}</p>
-                <button type="button" onClick={() => handleDelete(motorcycle.id)}>DELETE</button>
+                {user && (
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(motorcycle.id)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             </div>
           </button>
