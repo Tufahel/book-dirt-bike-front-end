@@ -71,16 +71,6 @@ export const fetchMotorcyclesData = async () => {
   return res;
 };
 
-export const fetchMotorcycle = async (id) => {
-  const res = await axios.get(`${URL}/api/motorcycles/${id}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken()}`,
-    },
-  });
-  return res;
-};
-
 export const deleteMotorcycleData = async (id) => {
   const res = await axios.delete(`${URL}/api/motorcycles/${id}`, {
     headers: {

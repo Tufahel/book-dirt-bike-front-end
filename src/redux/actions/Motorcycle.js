@@ -1,5 +1,5 @@
 import {
-  fetchMotorcyclesData, postNewMotorcycle, deleteMotorcycleData, fetchMotorcycle,
+  fetchMotorcyclesData, postNewMotorcycle, deleteMotorcycleData,
 } from '../../api/Api';
 import { signIn } from './User';
 
@@ -8,8 +8,6 @@ export const actionTypes = {
   MOTORCYCLE_CREATE_FAILURE: 'MOTORCYCLE_CREATE_FAILURE',
   MOTORCYCLE_DELETE_SUCCESS: 'MOTORCYCLE_DELETE_SUCCESS',
   MOTORCYCLE_DELETE_FAILURE: 'MOTORCYCLE_DELETE_FAILURE',
-  MOTORCYCLE_GET_SUCCESS: 'MOTORCYCLE_GET_SUCCESS',
-  MOTORCYCLE_GET_FAILURE: 'MOTORCYCLE_GET_FAILURE',
   MOTORCYCLES_GET_SUCCESS: 'MOTORCYCLE_GET_SUCCESS',
   MOTORCYCLES_GET_FAILURE: 'MOTORCYCLE_GET_FAILURE',
 };
@@ -28,6 +26,7 @@ export const getMotorcycles = () => async (dispatch) => {
           bike_id: motorcycle.id,
         })),
       });
+      localStorage.setItem('bikes', JSON.stringify(motorcycles));
     })
     .catch((error) => {
       dispatch({
@@ -68,24 +67,6 @@ export const deleteMotorcycle = (id) => (dispatch) => {
     .catch((error) => {
       dispatch({
         type: actionTypes.MOTORCYCLE_DELETE_FAILURE,
-        payload: error,
-      });
-    });
-};
-
-export const getMotorcycle = (id) => (dispatch) => {
-  fetchMotorcycle(id)
-    .then((bike) => {
-      dispatch({
-        type: actionTypes.MOTORCYCLE_GET_SUCCESS,
-        payload: bike,
-      });
-      localStorage.setItem('bikes', JSON.stringify(bike.data));
-      localStorage.setItem('bikeid', bike.data.id);
-    })
-    .catch((error) => {
-      dispatch({
-        type: actionTypes.MOTORCYCLE_GET_FAILURE,
         payload: error,
       });
     });

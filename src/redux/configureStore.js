@@ -7,7 +7,7 @@ import { RentalsReducer, CreateRentalReducer } from './reducers/Rentals';
 import {
   UsersReducer, SignupReducer, SigninReducer, SignoutReducer,
 } from './reducers/User';
-import { MotorcycleReducer, MotorcycleGetReducer } from './reducers/Motorcycle';
+import MotorcycleReducer from './reducers/Motorcycle';
 
 const rootReducer = combineReducers({
   SignupReducer,
@@ -17,7 +17,6 @@ const rootReducer = combineReducers({
   RentalsReducer,
   CreateRentalReducer,
   MotorcycleReducer,
-  MotorcycleGetReducer,
 });
 const store = createStore(rootReducer,
   compose(applyMiddleware(thunk, logger)));
