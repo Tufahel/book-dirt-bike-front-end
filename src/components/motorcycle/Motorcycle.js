@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import './Motorcycle.css';
 import { getMotorcycles, deleteMotorcycle } from '../../redux/actions/Motorcycle';
+import Details from './Details';
 // import AddMotorcycle from './AddMotorcycle';
 import Navigation from '../Navigation/Navigation';
 
-export default function Motorcycle() {
+function Motorcycle() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const dispatch = useDispatch();
   const motorcycles = useSelector((state) => state.MotorcyclesReducer);
   const navigate = useNavigate();
@@ -20,24 +24,48 @@ export default function Motorcycle() {
     dispatch(deleteMotorcycle(id));
   };
 
+  const setModalIsOpenToTrue = () => {
+    setModalIsOpen(true);
+  };
+
+  const setModalIsOpenToFalse = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <>
       <Navigation />
-      {motorcycles.value?.map((motorcycle) => (
-        <p key={motorcycle.id}>
-          bike type: &nbsp;
-          {motorcycle.name}
-          {' '}
-          and &nbsp;
-          {motorcycle.details}
-          is available for rent at &nbsp;
-          {motorcycle.price}
-          .
-          <button type="button" onClick={() => handleDelete()}>DELETE</button>
-        </p>
-      ))}
+      <div className="bike">
+        {motorcycles.value?.map((motorcycle) => (
+          <button
+            onClick={setModalIsOpenToTrue}
+            key={motorcycle.id}
+            type="button"
+          >
+            <div key={motorcycle.id} className="bike__container">
+              <div className="bike__image">
+                <img src={motorcycle.image} alt="bike" />
+              </div>
+              <div className="bike__details">
+                <h3>{motorcycle.name}</h3>
+                <p>{motorcycle.details}</p>
+                <p>{motorcycle.price}</p>
+                <button type="button" onClick={() => handleDelete(motorcycle.id)}>DELETE</button>
+              </div>
+            </div>
+          </button>
+        ))}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={setModalIsOpenToFalse}
+          className="modal"
+          overlayClassName="overlay"
+        >
+          <button type="button" onClick={setModalIsOpenToFalse}>X</button>
+          <Details />
+        </Modal>
 
-      {
+        {
         user && (
           <button
             type="button"
@@ -48,7 +76,10 @@ export default function Motorcycle() {
         )
 
       }
+      </div>
 
     </>
   );
 }
+
+export default Motorcycle;
