@@ -49,12 +49,7 @@ function Motorcycle() {
                 <p>{motorcycle.details}</p>
                 <p>{motorcycle.price}</p>
                 {user && (
-                  <button
-                    type="button"
-                    onClick={() => handleDelete(motorcycle.id)}
-                  >
-                    Delete
-                  </button>
+                  <button type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
                 )}
               </div>
             </div>
