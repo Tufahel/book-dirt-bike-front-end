@@ -15,7 +15,6 @@ const rootReducer = combineReducers({
   SignoutReducer,
   UsersReducer,
   RentalsReducer,
-  CreateMotorcycleReducer,
   CreateRentalReducer,
   MotorcycleReducer,
   MotorcycleGetReducer,

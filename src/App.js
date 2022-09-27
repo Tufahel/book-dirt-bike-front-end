@@ -13,7 +13,6 @@ import Rental from './components/rental/Rentals';
 import Details from './components/motorcycle/Details';
 import Home from './components/Home';
 
-
 const App = () => (
   <Router>
     <Routes>
