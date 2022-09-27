@@ -11,10 +11,10 @@ const AddRental = () => {
     return: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = () => {
     setRental({
-      ...rental
-      [e.target.name] , e.target.value,
+      ...rental,
+      // [e.target.name] , e.target.value,
     });
   };
 
