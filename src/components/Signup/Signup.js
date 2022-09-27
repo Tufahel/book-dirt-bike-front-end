@@ -101,6 +101,8 @@ const Signup = () => {
             required
             value={userRegister.date_of_birth}
           />
+          { userRegister.password !== userRegister.confirm_password
+          && <div>password not matched</div>}
           { loadingSignup && (
           <div className="">
             <div className="">
