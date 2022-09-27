@@ -1,5 +1,6 @@
 import React from 'react';
 import './Details.css';
+import { NavLink } from 'react-router-dom';
 
 const Details = () => {
   // const motorcycles = localStorage.getItem('bikes');
@@ -27,6 +28,8 @@ const Details = () => {
       </h2>
 
       <hr />
+      <NavLink to="/addrental"> Rent</NavLink>
+
     </div>
   );
 };

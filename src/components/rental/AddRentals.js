@@ -4,17 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import { createRental } from '../../redux/actions/Rentals';
 
 const AddRental = () => {
+  const bikeId = localStorage.getItem('bikeid');
   const rentals = useSelector((state) => state.CreateRentalReducer);
   const [rental, setRental] = useState({
     city: '',
     booked: '',
     return: '',
+    bikeId,
   });
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setRental({
       ...rental,
-      // [e.target.name] , e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -39,9 +41,9 @@ const AddRental = () => {
 
             <input
               className="input-field"
-              placeholder="Price per hour"
-              type="number"
-              name="amount"
+              placeholder="City"
+              type="text"
+              name="city"
               value={rental.city}
               minLength="1"
               maxLength="100"
@@ -51,9 +53,9 @@ const AddRental = () => {
 
             <input
               className="input-field"
-              placeholder="image"
-              type="text"
-              name="image"
+              placeholder="Booked"
+              type="date"
+              name="rented"
               value={rental.booked}
               minLength="1"
               maxLength="100"
@@ -63,9 +65,9 @@ const AddRental = () => {
 
             <textarea
               className="input-field"
-              placeholder="Details"
-              type="text"
-              name="details"
+              placeholder="Return"
+              type="date"
+              name="returned"
               value={rental.return}
               minLength="1"
               maxLength="100"
@@ -75,6 +77,7 @@ const AddRental = () => {
             <button
               className=""
               type="submit"
+              onClick={handleSubmit}
             >
               Create Rental
             </button>

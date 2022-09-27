@@ -10,8 +10,9 @@ import Signup from './components/Signup/Signup';
 import Navigation from './components/Navigation/Navigation';
 import AddMotorcycle from './components/motorcycle/AddMotorcycle';
 import Rental from './components/rental/Rentals';
-import Details from './components/motorcycle/Details';
 import Home from './components/Home';
+import AddRental from './components/rental/AddRentals';
+import Details from './components/motorcycle/Details';
 
 const App = () => (
   <Router>
@@ -25,6 +26,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/motorcycles" element={<Motorcycles />} />
       <Route path="/addmotorcycle" element={<AddMotorcycle />} />
+      <Route path="/addrental" element={<AddRental />} />
     </Routes>
   </Router>
 );
