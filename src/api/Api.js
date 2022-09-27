@@ -8,12 +8,6 @@ export const fetchUserData = async () => {
   return res;
 };
 
-export const fetchMotorcycleData = async () => {
-  const res = await fetch(`${URL}/api/motorcycles`)
-    .then((response) => response.json());
-  return res;
-};
-
 export const fetchRentalsData = async () => {
   const res = await fetch(`${URL}/api/rentals`)
     .then((response) => response.json());
@@ -69,6 +63,22 @@ export const postNewMotorcycle = async (data, id) => {
   });
 
   return response.data;
+};
+
+export const fetchMotorcyclesData = async () => {
+  const res = await fetch(`${URL}/api/motorcycles`)
+    .then((response) => response.json());
+  return res;
+};
+
+export const fetchMotorcycle = async (id) => {
+  const res = await axios.get(`${URL}/api/motorcycles/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken()}`,
+    },
+  });
+  return res;
 };
 
 export const deleteMotorcycleData = async (id) => {

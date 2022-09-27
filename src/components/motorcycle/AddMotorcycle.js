@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createMotorcycle } from '../../redux/actions/Motorcycle';
 import Navigation from '../Navigation/Navigation';
-import './Motorcycle.css';
+import './Motorcycles.css';
 
 const AddMotorcycle = () => {
-  const motorcycles = useSelector((state) => state.CreateMotorcyclereducer);
+  const motorcycles = useSelector((state) => state.MotorcycleReducer);
   const [motorcycle, setMotorcycle] = useState({
     bike_name: '',
     details: '',
@@ -26,7 +26,7 @@ const AddMotorcycle = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createMotorcycle(motorcycle, navigate('/motorcycle'), e));
+    dispatch(createMotorcycle(motorcycle, navigate('/motorcycles'), e));
   };
 
   return (

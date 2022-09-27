@@ -1,32 +1,39 @@
 import React from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import './Detail.css';
+import './Details.css';
 
 const Details = () => {
-  const { id } = useParams();
-  const motorcycles = useSelector((state) => state.MotorcyclesReducer);
-  const { state } = useLocation();
-  const { bike } = state || { bike: motorcycles } || { bike: null };
+  // const motorcycles = localStorage.getItem('bikes');
+  const motorcycles = JSON.parse(localStorage.getItem('bikes'));
+  const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
+  const filtered = motorcycles.filter((motorcycle) => motorcycle.id === bikeId);
+  console.log('all bikes: ', motorcycles);
+  console.log('filtered: ', filtered);
+  console.log('only id: ', bikeId);
 
   return (
-    bike && (
-      <div className="bike__container">
-        {motorcycles.value?.map((motorcycle) => (
-          <div key={motorcycle.id} className="bike__container">
-            <div className="bike__image">
-              <img className="imagebike" src={motorcycle.image} alt="bike" />
-            </div>
-            <div className="bike__details">
-              <h3>{motorcycle.name}</h3>
-              <p>{motorcycle.details}</p>
-              <p>{motorcycle.price}</p>
-            </div>
-          </div>
-        ))}
-        <Link to={`/motorcycle/${id}/reserve`}>Reserve</Link>
-      </div>
-    )
+    <div>
+      {filtered.map((motorcycle) => (
+        <div key={motorcycle.id}>
+          <h2>
+            name:
+            {' '}
+            {motorcycle.bike_name}
+          </h2>
+          <h2>
+            price:
+            {' '}
+            {motorcycle.amount}
+          </h2>
+          <h2>
+            details:
+            {' '}
+            {motorcycle.details}
+          </h2>
+
+          <hr />
+        </div>
+      ))}
+    </div>
   );
 };
 // function Details() {
