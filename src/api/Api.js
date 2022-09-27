@@ -90,3 +90,21 @@ export const deleteMotorcycleData = async (id) => {
   });
   return res.data;
 };
+
+export const addNewRental = async (data, id) => {
+  const newRental = {
+    bike_name: data.motorcycle_id,
+    city: data.city,
+    booked: data.book_date,
+    return: data.return_date,
+    user_id: id,
+  };
+
+  const response = await axios.post(`${URL}/api/rentals`, newRental, {
+    headers: {
+      Authorization: `Bearer ${authToken()}`,
+    },
+  });
+
+  return response.data;
+};

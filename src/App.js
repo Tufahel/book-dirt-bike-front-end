@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Navigation from './components/Navigation/Navigation';
 import AddMotorcycle from './components/motorcycle/AddMotorcycle';
+import Rental from './components/rental/Rentals';
 import Details from './components/motorcycle/Details';
 import Home from './components/Home';
 
@@ -19,6 +20,8 @@ const App = () => (
       <Route path="/details" element={<Details />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+      {/* <Route path="/" element={<User />} /> */}
+      <Route path="/rental" element={<Rental />} />
       <Route path="/" element={<Home />} />
       <Route path="/motorcycles" element={<Motorcycles />} />
       <Route path="/addmotorcycle" element={<AddMotorcycle />} />

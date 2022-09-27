@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRentals } from '../redux/actions/Rentals';
+import { getRentals } from '../../redux/actions/Rentals';
 
 export default function Rental() {
   const dispatch = useDispatch();
@@ -20,7 +20,10 @@ export default function Rental() {
           and will be booked on &nbsp;
           {rental.booked}
           {', '}
-          will be returned on &nbsp;
+          in &nbsp;
+          {rental.city}
+          {', '}
+          and will be returned on &nbsp;
           {rental.return}
           .
         </p>
