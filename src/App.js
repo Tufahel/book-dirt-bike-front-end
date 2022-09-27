@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Navigation from './components/Navigation/Navigation';
 import AddMotorcycle from './components/motorcycle/AddMotorcycle';
-// import Home from './components/Home';
+import Home from './components/Home';
 
 const App = () => (
   <Router>
@@ -17,8 +17,8 @@ const App = () => (
       <Route path="/nav" element={<Navigation />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/" element={<Home />} /> */}
-      <Route path="/" element={<Motorcycle />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/motorcycle" element={<Motorcycle />} />
       <Route path="/addmotorcycle" element={<AddMotorcycle />} />
     </Routes>
   </Router>
