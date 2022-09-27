@@ -45,8 +45,6 @@ const AddRental = () => {
               type="text"
               name="city"
               value={rental.city}
-              minLength="1"
-              maxLength="100"
               onChange={handleChange}
               required
             />
@@ -57,8 +55,6 @@ const AddRental = () => {
               type="date"
               name="rented"
               value={rental.booked}
-              minLength="1"
-              maxLength="100"
               onChange={handleChange}
               required
             />
@@ -69,8 +65,6 @@ const AddRental = () => {
               type="date"
               name="returned"
               value={rental.return}
-              minLength="1"
-              maxLength="100"
               onChange={handleChange}
               required
             />
