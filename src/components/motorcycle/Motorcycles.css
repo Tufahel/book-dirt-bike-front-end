@@ -1,23 +1,3 @@
-/* .bike__container {
-  display: grid;
-  grid-template-columns: 6fr 4fr;
-  column-gap: 2rem;
-} */
-
-.bike__details {
-  display: flex;
-  flex-direction: row;
-  gap: 15%;
-  padding: 10px;
-}
-
-.desc {
-  /* display: flex;
-  flex-direction: row;
-  gap: 30%;
-  padding: 10px; */
-}
-
 .delete {
   background-color: white;
 }
@@ -25,35 +5,6 @@
 .delete:hover {
   background-color: red !important;
   color: white;
-}
-
-.desc h2 {
-  text-transform: uppercase;
-  font-size: 1.2em;
-  font-weight: 400;
-  color: #000;
-}
-
-.bike__details p {
-  font-size: 1.2em;
-  font-weight: 400;
-  width: 20%;
-  color: #000;
-}
-
-.bike__details button {
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1.2em;
-  font-weight: 400;
-  cursor: pointer;
-  height: 25%;
-}
-
-.delete:hover {
-  background-color: #f00;
-  color: #fff;
 }
 
 .d-link:hover {
@@ -65,13 +16,16 @@
   background-color: #97bf0f !important;
 }
 
-button:hover {
-  background-color: #000;
-  color: #fff;
+.createbike {
+  background-color: #97bf0f !important;
 }
 
+.createbike:hover {
+  background-color: white !important;
+  color: #97bf0f !important;
+}
 
-.form-section {
+/* .form-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,4 +42,4 @@ button:hover {
   justify-content: center;
   width: 50%;
   padding: 20px;
-}
+} */
