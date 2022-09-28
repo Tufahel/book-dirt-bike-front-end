@@ -46,7 +46,7 @@ export const createMotorcycle = (bike, location) => (dispatch) => {
         type: actionTypes.MOTORCYCLE_CREATE_SUCCESS,
         payload: bike,
       });
-      location('/motorcycles');
+      location('/');
     })
     .catch((error) => {
       dispatch({

@@ -32,17 +32,8 @@ function Navigation() {
           </div>
           <div className="relative">
             <ul className="relative">
-              <li className="relative">
-                <NavLink
-                  className="link flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-white hover:bg-primary transition duration-300 ease-in-out"
-                  to="/"
-                  exact
-                >
-                  Home
-                </NavLink>
-              </li>
               <li className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-white hover:bg-primary transition duration-300 ease-in-out" key="link1">
-                <NavLink to="/motorcycles" className="link hover:text-white">Bikes</NavLink>
+                <NavLink to="/" className="link hover:text-white">Home</NavLink>
               </li>
               {
               user && (

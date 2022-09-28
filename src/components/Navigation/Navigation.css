@@ -35,12 +35,12 @@ ul {
   font-weight: 500;
 }
 
-.divider {
+/* .divider {
   display: flex;
   flex-direction: column;
   gap: 50px;
-}
+} */
 
-.social {
+/* .social {
   margin-top: 25rem;
-}
+} */
