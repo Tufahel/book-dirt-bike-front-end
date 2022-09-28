@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ThreeDots } from 'react-loader-spinner';
 import { signIn } from '../../redux/actions/User';
-import './Login.css';
 
 const Login = () => {
   const { errorSignin = null, loadingSignin = false } = useSelector((state) => state.SigninReducer);
