@@ -25,52 +25,34 @@ function Rentals() {
   return (
     <>
       <Navigation />
-      <div className="bike">
+      <div className="flex flex-col items-center">
+        <h1 className="text-4xl text-primary font-bold">Reservations</h1>
         {reservations.rentals?.map((reservation) => (
-          <button
+          <div
             key={reservation.id}
-            type="button"
-            className=""
+            className="m-4"
           >
             <div key={reservation.id} className="">
-              <div className="">
-                reservation id
-                <h3>{reservation.id}</h3>
+              <div className="flex gap-4 p-4">
+                <b>Reservation id</b>
+                <p className="">{reservation.id}</p>
                 {' '}
-                user id
-                <h3>{reservation.user_id}</h3>
+                <b>User id</b>
+                <p>{reservation.user_id}</p>
                 {' '}
-                bike id
-                <h2>{reservation.motorcycle_id}</h2>
+                <b>Bike id</b>
+                <p>{reservation.motorcycle_id}</p>
                 {' '}
-                book date
+                <b>Book date</b>
                 <p>{reservation.book_date}</p>
                 {' '}
-                return date
-                <p>{reservation.return_date}</p>
-                <button type="button" onClick={() => handleDelete(reservation.id)}>DELETE</button>
-                {/* <>
-                  <reservation
-                    key={reservation.bike_id}
-                    id={reservation.bike_id}
-                  />
-                </> */}
+                <b>Return date</b>
+                <p className="">{reservation.return_date}</p>
+                <button className="delete text-red font-bold py-2 px-4 rounded-full" type="button" onClick={() => handleDelete(reservation.id)}>Remove Reservation</button>
               </div>
             </div>
-          </button>
+          </div>
         ))}
-
-        {/* {
-        user && (
-          <button
-            type="button"
-            onClick={() => navigate('/addreservation')}
-          >
-            Add Bike
-          </button>
-        )
-
-      } */}
       </div>
 
     </>

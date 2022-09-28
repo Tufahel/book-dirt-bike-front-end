@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createRental } from '../../redux/actions/Rental';
+import Navgation from '../Navigation/Navigation';
 
 const AddRental = () => {
   const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
@@ -31,17 +32,17 @@ const AddRental = () => {
 
   return (
     <>
-      <div className="">
-        <section className="form-page">
-          <p className="text-center" style={{ color: 'rgb(100 116 139)' }}>Add Rental </p>
-          <hr />
+      <Navgation />
+      <div className="w-full flex flex-col items-center justify-center h-screen">
+        <section className="">
+          <p className="text-center text-4xl text-primary font-bold">Reserve Bike </p>
           <form
             onSubmit={handleSubmit}
-            className=""
+            className="bg-white shadow-lg rounded px-8 pt-6 pb-8"
           >
 
             <input
-              className="input-field"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
               placeholder="City"
               type="text"
               name="city"
@@ -49,9 +50,9 @@ const AddRental = () => {
               onChange={handleChange}
               required
             />
-
+            <br />
             <input
-              className="input-field"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
               placeholder="Book"
               type="date"
               name="book_date"
@@ -59,9 +60,9 @@ const AddRental = () => {
               onChange={handleChange}
               required
             />
-
+            <br />
             <input
-              className="input-field"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
               placeholder="Return"
               type="date"
               name="return_date"
@@ -69,8 +70,9 @@ const AddRental = () => {
               onChange={handleChange}
               required
             />
+            <br />
             <button
-              className=""
+              className="createbike text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
               onClick={handleSubmit}
             >
