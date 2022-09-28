@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { createRental } from '../../redux/actions/Rentals';
+import { createRental } from '../../redux/actions/Rental';
 
 const AddRental = () => {
-  const rentals = useSelector((state) => state.CreateRentalReducer);
+  const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
+  const userId = parseInt(localStorage.getItem('userid'), 10);
+  const rentals = useSelector((state) => state.RentalsReducer);
   const [rental, setRental] = useState({
     city: '',
-    booked: '',
-    return: '',
+    book_date: '',
+    return_date: '',
   });
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setRental({
       ...rental,
-      // [e.target.name] , e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
   const dispatch = useDispatch(rentals);
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createRental(rental, navigate('/rental'), e));
+    dispatch(createRental(rental, userId, bikeId));
   };
 
   return (
@@ -39,42 +39,37 @@ const AddRental = () => {
 
             <input
               className="input-field"
-              placeholder="Price per hour"
-              type="number"
-              name="amount"
+              placeholder="City"
+              type="text"
+              name="city"
               value={rental.city}
-              minLength="1"
-              maxLength="100"
               onChange={handleChange}
               required
             />
 
             <input
               className="input-field"
-              placeholder="image"
-              type="text"
-              name="image"
-              value={rental.booked}
-              minLength="1"
-              maxLength="100"
+              placeholder="Book"
+              type="date"
+              name="book_date"
+              value={rental.book_date}
               onChange={handleChange}
               required
             />
 
-            <textarea
+            <input
               className="input-field"
-              placeholder="Details"
-              type="text"
-              name="details"
-              value={rental.return}
-              minLength="1"
-              maxLength="100"
+              placeholder="Return"
+              type="date"
+              name="return_date"
+              value={rental.return_date}
               onChange={handleChange}
               required
             />
             <button
               className=""
               type="submit"
+              onClick={handleSubmit}
             >
               Create Rental
             </button>
