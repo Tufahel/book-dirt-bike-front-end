@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ThreeDots } from 'react-loader-spinner';
 import { signIn } from '../../redux/actions/User';
-import Navigation from '../Navigation/Navigation';
 import './Login.css';
 
 const Login = () => {
@@ -28,11 +27,10 @@ const Login = () => {
   };
   return (
     <>
-      <Navigation />
       <div className="main-login">
         <h1 className="">Login</h1>
         <form
-          className="form-container"
+          className="form-container form-group"
           onSubmit={handleLogin}
         >
           { loadingSignin && (
@@ -54,14 +52,19 @@ const Login = () => {
           { errorSignin && (
           <p className="text-red-500 font-italic">Invalid email/password</p>
           )}
-          <input onChange={handleOnChange} className="" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
-          <input onChange={handleOnChange} className="" type="password" name="password" id="login-password-field" placeholder="Password" required />
+          <input onChange={handleOnChange} className="form-control m-3" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
+          <input onChange={handleOnChange} className="form-control m-3" type="password" name="password" id="login-password-field" placeholder="Password" required />
           <small className="">{}</small>
           <span className="">
             Not a member?
             <NavLink className="" to="/signup">Signup</NavLink>
           </span>
-          <input className="" type="submit" value="Login" />
+          <button
+            className="btn btn-primary m-3"
+            type="submit"
+          >
+            Login
+          </button>
         </form>
       </div>
     </>

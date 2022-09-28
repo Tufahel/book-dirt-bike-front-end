@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThreeDots } from 'react-loader-spinner';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { signUp } from '../../redux/actions/User';
-import Navigation from '../Navigation/Navigation';
 import './Signup.css';
 
 const Signup = () => {
@@ -33,11 +32,10 @@ const Signup = () => {
 
   return (
     <>
-      <Navigation />
       <div className="mainSign">
         <h1 className="">Sign Up</h1>
         <form
-          className="signup-form"
+          className="signup-form form-group"
           onSubmit={handleLogin}
         >
           { errorSignup && (
@@ -47,7 +45,7 @@ const Signup = () => {
           )}
           <input
             onChange={handleOnChange}
-            className=""
+            className="form-control m-3"
             type="text"
             name="username"
             placeholder="Username"
@@ -56,7 +54,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className=""
+            className="form-control m-3"
             type="text"
             name="full_name"
             placeholder="Full Name"
@@ -65,7 +63,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className=""
+            className="form-control m-3"
             type="email"
             name="email"
             placeholder="Email"
@@ -74,7 +72,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="w-full sm:w-3/4 border-1 border-main  focus:border-main"
+            className="form-control m-3"
             type="password"
             name="password"
             placeholder="Password"
@@ -84,7 +82,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="w-full sm:w-3/4 border-1 border-main  focus:border-main"
+            className="form-control m-3"
             type="password"
             name="confirm_password"
             placeholder="Confirm Password"
@@ -92,9 +90,9 @@ const Signup = () => {
             minLength="6"
             value={userRegister.confirm_password}
           />
-          <textarea
+          <input
             onChange={handleOnChange}
-            className="w-full sm:w-3/4 border-1 border-main focus:border-main"
+            className="form-control m-3"
             type="date"
             name="date_of_birth"
             placeholder="Date"
@@ -126,7 +124,7 @@ const Signup = () => {
             </NavLink>
           </p>
           <button
-            className=""
+            className="btn btn-primary pointer"
             type="submit"
           >
             Signup
