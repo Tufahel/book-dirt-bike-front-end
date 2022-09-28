@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { createRental } from '../../redux/actions/Rentals';
+import { createRental } from '../../redux/actions/Rental';
 
 const AddRental = () => {
-  const bikeId = localStorage.getItem('bikeid');
-  const rentals = useSelector((state) => state.CreateRentalReducer);
+  const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
+  const userId = parseInt(localStorage.getItem('userid'), 10);
+  const rentals = useSelector((state) => state.RentalsReducer);
   const [rental, setRental] = useState({
     city: '',
-    booked: '',
-    return: '',
-    bikeId,
+    book_date: '',
+    return_date: '',
   });
 
   const handleChange = (e) => {
@@ -21,11 +20,10 @@ const AddRental = () => {
   };
 
   const dispatch = useDispatch(rentals);
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createRental(rental, navigate('/rental'), e));
+    dispatch(createRental(rental, userId, bikeId));
   };
 
   return (
@@ -51,10 +49,10 @@ const AddRental = () => {
 
             <input
               className="input-field"
-              placeholder="Booked"
+              placeholder="Book"
               type="date"
-              name="rented"
-              value={rental.booked}
+              name="book_date"
+              value={rental.book_date}
               onChange={handleChange}
               required
             />
@@ -63,8 +61,8 @@ const AddRental = () => {
               className="input-field"
               placeholder="Return"
               type="date"
-              name="returned"
-              value={rental.return}
+              name="return_date"
+              value={rental.return_date}
               onChange={handleChange}
               required
             />

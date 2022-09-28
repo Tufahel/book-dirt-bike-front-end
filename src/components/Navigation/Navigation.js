@@ -33,7 +33,7 @@ function Navigation() {
                   </NavLink>
                 </li>
                 <li className="" key="link1">
-                  <NavLink to="/motorcycle" className="link">Bikes</NavLink>
+                  <NavLink to="/motorcycles" className="link">Bikes</NavLink>
                 </li>
                 {
               user && (
