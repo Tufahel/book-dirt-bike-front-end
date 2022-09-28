@@ -13,14 +13,14 @@ const Motorcycle = (props) => {
   };
 
   return (
-    <div>
+    <div className="pt-4">
       <NavLink
         key={id}
         onClick={() => {
           setBikeId(id);
         }}
         to="/details"
-        className="link"
+        className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
       >
         Details
       </NavLink>

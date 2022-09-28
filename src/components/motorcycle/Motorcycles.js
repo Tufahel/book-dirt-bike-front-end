@@ -29,33 +29,40 @@ function Motorcycles() {
             <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
           </div>
         </div>
-        {motorcycles.bikes?.map((motorcycle) => (
-          <div key={motorcycle.id} className="bike__container">
-            <div className="bike__details">
-              <img className="imagebike" src={motorcycle.image} alt="bike" />
-              <div className="desc">
-                <h2>{motorcycle.name}</h2>
-                <p>{motorcycle.details}</p>
-                <p>{motorcycle.price}</p>
-                {user && (
-                <button className="delete" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
-                )}
-                <>
-                  <Motorcycle
-                    className="details"
-                    key={motorcycle.bike_id}
-                    id={motorcycle.bike_id}
-                  />
-                </>
+        <div className="p-4">
+          {motorcycles.bikes?.map((motorcycle) => (
+            <div key={motorcycle.id} className="grid grid-cols-2 p-4">
+              <div className="flex gap-10">
+                <img className="rounded-full w-60 h-60" src={motorcycle.image} alt="bike" />
+                <div className="">
+                  <h2 className="uppercase">{motorcycle.name}</h2>
+                  <p className="">
+                    Details: &nbsp;
+                    {motorcycle.details}
+                  </p>
+                  <p className="">
+                    Rent Price: &nbsp;
+                    {motorcycle.price}
+                  </p>
+                  <div className="flex gap-4">
+                    {user && (
+                    <button className="delete text-red font-bold py-2 px-4 rounded-full" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
+                    )}
+                    <Motorcycle
+                      key={motorcycle.bike_id}
+                      id={motorcycle.bike_id}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
 
         {
         user && (
           <button
-            className="addbike"
+            className="addbike text-white bg-primary font-bold py-4 px-8 rounded-full"
             type="button"
             onClick={() => navigate('/addmotorcycle')}
           >
