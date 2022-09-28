@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Navigation from './components/Navigation/Navigation';
 import AddMotorcycle from './components/motorcycle/AddMotorcycle';
-import Rental from './components/rental/Rentals';
+import Rentals from './components/rental/Rentals';
 import Home from './components/Home';
 import AddRental from './components/rental/AddRentals';
 import Details from './components/motorcycle/Details';
@@ -22,7 +22,7 @@ const App = () => (
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       {/* <Route path="/" element={<User />} /> */}
-      <Route path="/rental" element={<Rental />} />
+      <Route path="/rentals" element={<Rentals />} />
       <Route path="/" element={<Home />} />
       <Route path="/motorcycles" element={<Motorcycles />} />
       <Route path="/addmotorcycle" element={<AddMotorcycle />} />
