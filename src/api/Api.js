@@ -8,12 +8,6 @@ export const fetchUserData = async () => {
   return res;
 };
 
-export const fetchRentalsData = async () => {
-  const res = await fetch(`${URL}/api/rentals`)
-    .then((response) => response.json());
-  return res;
-};
-
 export const postSignupData = async (user) => {
   const res = await axios.post(`${URL}/users`, {
     user: {
@@ -81,13 +75,13 @@ export const deleteMotorcycleData = async (id) => {
   return res.data;
 };
 
-export const addNewRental = async (data, id) => {
+export const addNewRental = async (data, userId, bikeId) => {
   const newRental = {
-    bike_name: data.motorcycle_id,
     city: data.city,
-    booked: data.book_date,
-    return: data.return_date,
-    user_id: id,
+    book_date: data.book_date,
+    return_date: data.return_date,
+    user_id: userId,
+    motorcycle_id: bikeId,
   };
 
   const response = await axios.post(`${URL}/api/rentals`, newRental, {
@@ -97,4 +91,20 @@ export const addNewRental = async (data, id) => {
   });
 
   return response.data;
+};
+
+export const fetchRentalsData = async () => {
+  const res = await fetch(`${URL}/api/rentals`)
+    .then((response) => response.json());
+  return res;
+};
+
+export const deleteRentalseData = async (id) => {
+  const res = await axios.delete(`${URL}/api/rentals/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken()}`,
+    },
+  });
+  return res;
 };
