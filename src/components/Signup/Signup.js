@@ -32,10 +32,10 @@ const Signup = () => {
 
   return (
     <>
-      <div className="mainSign">
+      <div className="bg-amber-500 w-full flex flex-col items-center justify-center h-screen">
         <h1 className="">Sign Up</h1>
         <form
-          className="signup-form form-group"
+          className="signup-form bg-white shadow-md rounded px-8 pt-6 pb-8"
           onSubmit={handleLogin}
         >
           { errorSignup && (
@@ -45,7 +45,7 @@ const Signup = () => {
           )}
           <input
             onChange={handleOnChange}
-            className="form-control m-3"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="text"
             name="username"
             placeholder="Username"
@@ -54,7 +54,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="form-control m-3"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="text"
             name="full_name"
             placeholder="Full Name"
@@ -63,7 +63,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="form-control m-3"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="email"
             name="email"
             placeholder="Email"
@@ -72,7 +72,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="form-control m-3"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             name="password"
             placeholder="Password"
@@ -82,7 +82,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="form-control m-3"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             name="confirm_password"
             placeholder="Confirm Password"
@@ -92,7 +92,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="form-control m-3"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="date"
             name="date_of_birth"
             placeholder="Date"
@@ -117,18 +117,20 @@ const Signup = () => {
           </div>
           )}
           <small className="">{}</small>
-          <p className="">
-            Already a member?
-            <NavLink className="" to="/login">
-              Login
-            </NavLink>
-          </p>
-          <button
-            className="btn btn-primary pointer"
-            type="submit"
-          >
-            Signup
-          </button>
+          <div className="flex flex-col items-center justify-between gap-1">
+            <button
+              className="bg-amber-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Signup
+            </button>
+            <p className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+              Already a member?
+              <NavLink className="" to="/login">
+                Login
+              </NavLink>
+            </p>
+          </div>
         </form>
       </div>
     </>

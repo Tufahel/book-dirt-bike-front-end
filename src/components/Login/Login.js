@@ -27,10 +27,10 @@ const Login = () => {
   };
   return (
     <>
-      <div className="main-login">
-        <h1 className="">Login</h1>
+      <div className="bg-amber-500 w-full flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold text-white">Login</h1>
         <form
-          className="form-container form-group"
+          className="bg-white form-container shadow-md rounded px-8 pt-6 pb-8"
           onSubmit={handleLogin}
         >
           { loadingSignin && (
@@ -52,19 +52,21 @@ const Login = () => {
           { errorSignin && (
           <p className="text-red-500 font-italic">Invalid email/password</p>
           )}
-          <input onChange={handleOnChange} className="form-control m-3" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
-          <input onChange={handleOnChange} className="form-control m-3" type="password" name="password" id="login-password-field" placeholder="Password" required />
+          <input onChange={handleOnChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
+          <input onChange={handleOnChange} className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" id="login-password-field" placeholder="Password" required />
           <small className="">{}</small>
-          <span className="">
-            Not a member?
-            <NavLink className="" to="/signup">Signup</NavLink>
-          </span>
-          <button
-            className="btn btn-primary m-3"
-            type="submit"
-          >
-            Login
-          </button>
+          <div className="flex flex-col items-center justify-between gap-1">
+            <button
+              className="bg-amber-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Login
+            </button>
+            <span className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+              Not a member?
+              <NavLink className="" to="/signup">Signup</NavLink>
+            </span>
+          </div>
         </form>
       </div>
     </>
