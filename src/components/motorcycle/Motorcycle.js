@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import './Motorcycles.css';
 
 const Motorcycle = (props) => {
   const {
@@ -13,18 +14,16 @@ const Motorcycle = (props) => {
 
   return (
     <div>
-      <button
+      <NavLink
         key={id}
-        type="button"
-        className="btn"
         onClick={() => {
           setBikeId(id);
         }}
+        to="/details"
+        className="link"
       >
-        <NavLink to="/details" className="">
-          Details
-        </NavLink>
-      </button>
+        Details
+      </NavLink>
 
     </div>
   );

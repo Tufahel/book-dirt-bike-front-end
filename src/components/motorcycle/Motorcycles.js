@@ -24,36 +24,32 @@ function Motorcycles() {
       <Navigation />
       <div className="bike">
         {motorcycles.bikes?.map((motorcycle) => (
-          <button
-            key={motorcycle.id}
-            type="button"
-            className="bike__button"
-          >
-            <div key={motorcycle.id} className="bike__container">
-              <div className="bike__image">
-                <img className="imagebike" src={motorcycle.image} alt="bike" />
-              </div>
-              <div className="bike__details">
-                <h3>{motorcycle.name}</h3>
+          <div key={motorcycle.id} className="bike__container">
+            <div className="bike__details">
+              <img className="imagebike" src={motorcycle.image} alt="bike" />
+              <div className="desc">
+                <h2>{motorcycle.name}</h2>
                 <p>{motorcycle.details}</p>
                 <p>{motorcycle.price}</p>
                 {user && (
-                  <button type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
+                <button className="delete" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
                 )}
                 <>
                   <Motorcycle
+                    className="details"
                     key={motorcycle.bike_id}
                     id={motorcycle.bike_id}
                   />
                 </>
               </div>
             </div>
-          </button>
+          </div>
         ))}
 
         {
         user && (
           <button
+            className="addbike"
             type="button"
             onClick={() => navigate('/addmotorcycle')}
           >

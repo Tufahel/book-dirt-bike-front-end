@@ -1,8 +1,6 @@
 .bike {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 75vw;
@@ -12,37 +10,73 @@
 }
 
 .bike__container {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  column-gap: 2rem;
+}
+
+.bike__details {
+  display: flex;
+  flex-direction: row;
+  gap: 15%;
+  padding: 10px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: row;
+  gap: 30%;
+  padding: 10px;
+}
+
+.desc h2 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #000;
+}
+
+.bike__details p {
+  font-size: 1.2em;
+  font-weight: 400;
+  width: 20%;
+  color: #000;
+}
+
+.bike__details button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: 400;
+  cursor: pointer;
+  height: 25%;
+}
+
+.delete:hover {
+  background-color: #f00;
+  color: #fff;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .imagebike {
-  width: 100%;
-}
-
-.bike__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-  border: 1px solid #000;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 50%;
-  height: 50%;
-  background-color: blue;
+}
+
+.addbike {
+  border-radius: 5px;
+  background-color: #f5f5f5;
   padding: 20px;
 }
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 
 .form-section {
   display: flex;

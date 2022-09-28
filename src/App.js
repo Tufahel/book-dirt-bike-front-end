@@ -12,7 +12,7 @@ import AddMotorcycle from './components/motorcycle/AddMotorcycle';
 import Rentals from './components/rental/Rentals';
 import Home from './components/Home';
 import AddRental from './components/rental/AddRentals';
-import Details from './components/motorcycle/Details';
+import Details from './components/motorcycle/Details/Details';
 
 const App = () => (
   <Router>
