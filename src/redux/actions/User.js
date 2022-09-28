@@ -82,6 +82,8 @@ export const signOut = (location) => (dispatch) => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     localStorage.removeItem('userid');
+    localStorage.removeItem('bikes');
+    localStorage.removeItem('bikeid');
     dispatch({
       type: actionTypes.SIGNOUT_SUCCESS,
     });

@@ -36,7 +36,6 @@ export const getRentals = () => (dispatch) => {
         type: actionTypes.RENTALS_FETCH_SUCCESS,
         payload: rentals,
       });
-      localStorage.setItem('rentals', JSON.stringify(rentals));
     })
     .catch((error) => {
       dispatch({
