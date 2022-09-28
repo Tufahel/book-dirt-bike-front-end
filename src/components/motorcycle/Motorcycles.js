@@ -29,10 +29,10 @@ function Motorcycles() {
             <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
           </div>
         </div>
-        <div className="p-4">
+        <div className="p-4 flex">
           {motorcycles.bikes?.map((motorcycle) => (
-            <div key={motorcycle.id} className="grid grid-cols-2 p-4">
-              <div className="flex gap-10">
+            <div key={motorcycle.id} className="p-4">
+              <div className="flex flex-wrap gap-10">
                 <img className="rounded-full w-60 h-60" src={motorcycle.image} alt="bike" />
                 <div className="">
                   <h2 className="uppercase">{motorcycle.name}</h2>

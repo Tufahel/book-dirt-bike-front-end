@@ -16,6 +16,11 @@
   background-color: #97bf0f !important;
 }
 
+.addbike:hover {
+  background-color: white !important;
+  color: #97bf0f !important;
+}
+
 .createbike {
   background-color: #97bf0f !important;
 }
