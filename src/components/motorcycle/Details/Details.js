@@ -1,6 +1,6 @@
 import React from 'react';
-import './Details.css';
 import { NavLink } from 'react-router-dom';
+import Navigation from '../../Navigation/Navigation';
 
 const Details = () => {
   const motorcycles = JSON.parse(localStorage.getItem('bikes'));
@@ -11,29 +11,38 @@ const Details = () => {
   console.log('only id: ', bikeId);
 
   return (
-    <div>
-      {filtered.map((motorcycle) => (
-        <div key={motorcycle.id}>
-          <h2>
-            name:
-            {' '}
-            {motorcycle.bike_name}
-          </h2>
-          <h2>
-            price:
-            {' '}
-            {motorcycle.amount}
-          </h2>
-          <h2>
-            details:
-            {' '}
-            {motorcycle.details}
-          </h2>
-          <hr />
-          <NavLink to="/addrental"> Rent</NavLink>
-        </div>
-      ))}
-    </div>
+    <>
+      <Navigation />
+      <div className="flex flex-col justify-center items-center p-4">
+        {filtered.map((motorcycle) => (
+          <div className="" key={motorcycle.id}>
+            <img
+              className="rounded-full w-96 h-96"
+              src={motorcycle.image}
+              alt={motorcycle.name}
+            />
+            <div className="p-8">
+              <h2 className="uppercase">
+                Name:
+                {' '}
+                {motorcycle.bike_name}
+              </h2>
+              <h2 className="uppercase">
+                price:
+                {' '}
+                {motorcycle.amount}
+              </h2>
+              <h2>
+                DETAILS:
+                {' '}
+                {motorcycle.details}
+              </h2>
+            </div>
+          </div>
+        ))}
+        <NavLink className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link" to="/addrental"> Rent</NavLink>
+      </div>
+    </>
   );
 };
 // function Details() {

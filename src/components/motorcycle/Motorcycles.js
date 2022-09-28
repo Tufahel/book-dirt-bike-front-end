@@ -25,8 +25,8 @@ function Motorcycles() {
       <div className="h-screen flex flex-col items-center justify-center bg-gray-200 p-5 ml-64">
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold text-primary">Welcome to Dirty Bikes</h1>
-            <p className="flex flex-col justify-center items-center w-full text-2xl text-primary">We are the best bike rental company in the world</p>
+            <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirty Bikes</h1>
+            <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
           </div>
         </div>
         <div className="p-4">

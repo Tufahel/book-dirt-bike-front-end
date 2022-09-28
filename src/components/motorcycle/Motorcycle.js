@@ -13,7 +13,7 @@ const Motorcycle = (props) => {
   };
 
   return (
-    <div className="pt-4">
+    <div className="pt-4 flex flex-row">
       <NavLink
         key={id}
         onClick={() => {
@@ -24,6 +24,8 @@ const Motorcycle = (props) => {
       >
         Details
       </NavLink>
+
+      <NavLink className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link" to="/addrental"> Rent</NavLink>
 
     </div>
   );
