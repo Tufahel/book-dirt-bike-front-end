@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createRental } from '../../redux/actions/Rental';
 
@@ -11,6 +12,7 @@ const AddRental = () => {
     book_date: '',
     return_date: '',
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setRental({
@@ -24,6 +26,7 @@ const AddRental = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createRental(rental, userId, bikeId));
+    navigate('/rentals');
   };
 
   return (
