@@ -3,7 +3,7 @@
 > Dirt Bikes is an application to book dirt bikes for rent. The user will be able to choose a bike according to his preferences and book a period during which he will use the desired bike.
 
 <h2 align="center">
-  Demo 📝
+  Demo Pic📝
 </h2>
 
 ![image](/src/components/images/WhatsApp%20Image%202022-09-29%20at%2014.17.39.jpeg)
