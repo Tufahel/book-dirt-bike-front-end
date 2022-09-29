@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://incredible-unicorn-5f0c7d.netlify.app';
+const URL = 'https://calm-brushlands-14039.herokuapp.com';
 
 export const fetchUserData = async () => {
   const res = await fetch(`${URL}/api/users`)
