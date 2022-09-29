@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:3000';
+const URL = 'https://calm-brushlands-14039.herokuapp.com';
 
 export const fetchUserData = async () => {
   const res = await fetch(`${URL}/api/users`)
@@ -95,15 +95,5 @@ export const addNewRental = async (data, userId, bikeId) => {
 export const fetchRentalsData = async () => {
   const res = await fetch(`${URL}/api/rentals`)
     .then((response) => response.json());
-  return res;
-};
-
-export const deleteRentalseData = async (id) => {
-  const res = await axios.delete(`${URL}/api/rentals/${id}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${authToken()}`,
-    },
-  });
   return res;
 };

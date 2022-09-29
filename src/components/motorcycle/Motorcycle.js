@@ -5,13 +5,15 @@ import './Motorcycles.css';
 
 const Motorcycle = (props) => {
   const {
-    id,
+    id, image,
   } = props;
 
   const user = localStorage.getItem('user');
 
   const setBikeId = (id) => {
     localStorage.setItem('bikeid', id);
+    localStorage.setItem('recentbikeid', id);
+    localStorage.setItem('recentbikeimg', image);
   };
 
   return (
@@ -28,7 +30,16 @@ const Motorcycle = (props) => {
       </NavLink>
 
       {user && (
-      <NavLink className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link" to="/addrental"> Rent</NavLink>
+      <NavLink
+        key={id}
+        onClick={() => {
+          setBikeId(id);
+        }}
+        to="/addrental"
+        className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
+      >
+        Rent
+      </NavLink>
       )}
 
     </div>
@@ -37,6 +48,7 @@ const Motorcycle = (props) => {
 
 Motorcycle.propTypes = {
   id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Motorcycle;

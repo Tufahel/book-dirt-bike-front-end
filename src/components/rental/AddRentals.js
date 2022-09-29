@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createRental } from '../../redux/actions/Rental';
 
 const AddRental = () => {
-  const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
+  const recentId = parseInt(localStorage.getItem('recentbikeid'), 10);
   const userId = parseInt(localStorage.getItem('userid'), 10);
   const rentals = useSelector((state) => state.RentalsReducer);
   const [rental, setRental] = useState({
@@ -25,7 +25,8 @@ const AddRental = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createRental(rental, userId, bikeId));
+    dispatch(createRental(rental, userId, recentId));
+    console.log(recentId);
     navigate('/rentals');
   };
 

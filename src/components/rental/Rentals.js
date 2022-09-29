@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRentals, deleteRental } from '../../redux/actions/Rental';
+import { getRentals } from '../../redux/actions/Rental';
 
 function Rentals() {
+  const recentImg = localStorage.getItem('recentbikeimg');
   const dispatch = useDispatch();
   const res = useSelector((state) => state.RentalsReducer);
   const reservations = res.rentals;
   useEffect(() => {
     dispatch(getRentals());
   }, []);
-
-  const handleDelete = (id) => {
-    dispatch(deleteRental(id));
-    window.location.reload();
-  };
 
   return (
     <>
@@ -25,7 +21,8 @@ function Rentals() {
             className="m-4"
           >
             <div key={reservation.id} className="">
-              <div className="flex gap-4 p-4">
+              <div className="flex-row gap-4 p-4 card">
+                <img className="rounded-full w-60 h-60" src={recentImg} alt="bike" />
                 <b>Reservation id</b>
                 <p className="">{reservation.id}</p>
                 {' '}
@@ -40,7 +37,6 @@ function Rentals() {
                 {' '}
                 <b>Return date</b>
                 <p className="">{reservation.return_date}</p>
-                <button className="delete text-red font-bold py-2 px-4 rounded-full" type="button" onClick={() => handleDelete(reservation.id)}>Remove Reservation</button>
               </div>
             </div>
           </div>

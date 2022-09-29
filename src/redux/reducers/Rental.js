@@ -37,19 +37,6 @@ const RentalsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
-    case actionTypes.RENTAL_DELETE_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        error: false,
-      };
-
-    case actionTypes.RENTAL_DELETE_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload,
-      };
     default:
       return state;
   }
