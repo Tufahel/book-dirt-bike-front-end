@@ -15,20 +15,25 @@ import AddRental from './components/rental/AddRentals';
 import Details from './components/motorcycle/Details/Details';
 
 const App = () => (
-  <Router>
-    <Routes>
-      <Route path="/nav" element={<Navigation />} />
-      <Route path="/details" element={<Details />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
-      {/* <Route path="/" element={<User />} /> */}
-      <Route path="/rentals" element={<Rentals />} />
-      {/* <Route path="/" element={<Home />} /> */}
-      <Route path="/" element={<Motorcycles />} />
-      <Route path="/addmotorcycle" element={<AddMotorcycle />} />
-      <Route path="/addrental" element={<AddRental />} />
-    </Routes>
-  </Router>
+  <div className="h-screen text-gray-700 flex relative">
+    <Router>
+      <Navigation />
+      <main className="h-screen w-full overflow-y-auto relative">
+        <Routes>
+          <Route path="/nav" element={<Navigation />} />
+          <Route path="/details" element={<Details />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/" element={<User />} /> */}
+          <Route path="/rentals" element={<Rentals />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Motorcycles />} />
+          <Route path="/addmotorcycle" element={<AddMotorcycle />} />
+          <Route path="/addrental" element={<AddRental />} />
+        </Routes>
+      </main>
+    </Router>
+  </div>
 );
 
 export default App;

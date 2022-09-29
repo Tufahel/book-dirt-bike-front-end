@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRentals, deleteRental } from '../../redux/actions/Rental';
-import Navigation from '../Navigation/Navigation';
 
 function Rentals() {
   // const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
@@ -24,7 +23,6 @@ function Rentals() {
 
   return (
     <>
-      <Navigation />
       <div className="flex flex-col items-center">
         <h1 className="text-4xl text-primary font-bold">Reservations</h1>
         {reservations.rentals?.map((reservation) => (

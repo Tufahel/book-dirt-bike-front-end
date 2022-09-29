@@ -1,4 +1,4 @@
-.sidenav {
+/* .sidenav {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +7,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height: 100vh;
   position: fixed;
-}
+} */
 
 ul {
   list-style: none;

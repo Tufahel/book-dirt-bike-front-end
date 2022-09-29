@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Navigation from '../../Navigation/Navigation';
 
 const Details = () => {
   const motorcycles = JSON.parse(localStorage.getItem('bikes'));
@@ -12,7 +11,6 @@ const Details = () => {
 
   return (
     <>
-      <Navigation />
       <div className="flex flex-col justify-center items-center p-4">
         {filtered.map((motorcycle) => (
           <div className="" key={motorcycle.id}>

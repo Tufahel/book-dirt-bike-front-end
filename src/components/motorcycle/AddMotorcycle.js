@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createMotorcycle } from '../../redux/actions/Motorcycle';
-import Navigation from '../Navigation/Navigation';
 import './Motorcycles.css';
 
 const AddMotorcycle = () => {
@@ -31,7 +30,6 @@ const AddMotorcycle = () => {
 
   return (
     <>
-      <Navigation />
       <div className="w-full flex flex-col items-center justify-center h-screen">
         <section className="">
           <p className="text-center text-4xl text-primary font-bold">Add Bike </p>
