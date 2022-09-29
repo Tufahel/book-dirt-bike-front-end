@@ -32,7 +32,7 @@ const Motorcycles = () => {
     <div key={motorcycle.id} className="p-4">
       <div className="flex flex-wrap gap-10">
         <img className="rounded-full w-60 h-60" src={motorcycle.image} alt="bike" />
-        <div className="">
+        <div className="flex flex-col">
           <h2 className="uppercase">{motorcycle.name}</h2>
           <p className="">
             Details: &nbsp;
@@ -44,7 +44,7 @@ const Motorcycles = () => {
           </p>
           <div className="flex gap-4">
             {user && (
-            <button className="delete text-red font-bold py-2 px-4 rounded-full" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
+            <button className="delete text-red font-bold p-4 rounded-full" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
             )}
             <Motorcycle
               key={motorcycle.bike_id}
@@ -58,7 +58,7 @@ const Motorcycles = () => {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-center bg-gray-200 p-5">
+      <div className="h-screen flex flex-col items-center justify-center p-5">
         <div className="flex flex-col">
           <div className="flex flex-col">
             <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirty Bikes</h1>

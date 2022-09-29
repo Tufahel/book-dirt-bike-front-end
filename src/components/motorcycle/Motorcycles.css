@@ -34,7 +34,7 @@
   flex: 1 1 160px;
 }
 
-/* .form-section {
+.form-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,4 +51,4 @@
   justify-content: center;
   width: 50%;
   padding: 20px;
-} */
+}

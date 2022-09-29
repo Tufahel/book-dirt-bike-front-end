@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createRental } from '../../redux/actions/Rental';
-import Navgation from '../Navigation/Navigation';
 
 const AddRental = () => {
   const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
@@ -32,7 +31,6 @@ const AddRental = () => {
 
   return (
     <>
-      <Navgation />
       <div className="w-full flex flex-col items-center justify-center h-screen">
         <section className="">
           <p className="text-center text-4xl text-primary font-bold">Reserve Bike </p>

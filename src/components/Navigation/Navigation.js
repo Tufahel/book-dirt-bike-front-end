@@ -75,7 +75,7 @@ function Navigation() {
             }
               </ul>
             </div>
-            <div className="flex flex-col gap-1 items-center">
+            <div className="flex flex-col gap-1 items-center absolute bottom-0">
               <ul className="flex flex-col gap-1 items-center ">
                 <li>
                   Email: microver@mail.com
