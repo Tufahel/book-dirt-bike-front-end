@@ -1,65 +1,104 @@
-# React and Redux
+# Yatch House
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+> Yatch house is an application to book houses for rent like airbnb. The particularity is that the guests will live with their host to discover the local culture and customs. The user will be able to choose a house according to his preferences and book a period during which he will live with his guest.
 
-## Set-up GitHub Actions
+<h2 align="center">
+  Demo 📝
+</h2>
 
-This GitHub Action is going to run [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+![image](https://user-images.githubusercontent.com/43172164/192555510-3290ed04-e641-4637-9b6f-50978a603278.png)
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
 
-[ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+## Built With
 
-Please do the following **steps in this order**:
+- Create-react-app
+- Javascript
+- CSS
+- JSX
+- React router
+- Redux
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+## Back-end repo
+[backend repo](https://github.com/Baroka-wp/yatch_house)
 
-![gh actions checks](../assets/images/gh-actions-eslint-stylelint-checks.png)
+**Live**
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+- Live app: [YATCH-HOUSE](https://yatch-house.netlify.app/)
 
-![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
 
-## Set-up linters in your local env
+## Getting Started
 
-### ESLint
+To get a local copy up and running follow these setup steps.
 
-1. Run 
-    ```
-    npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x  @babel/preset-react@7.x @babel/preset-react@7.x
-    ```
-    *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
-2. Copy [.eslintrc.json](./.eslintrc.json) and [.babelrc](./.babelrc) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx eslint .` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+**Setup**
 
-### Stylelint
+- Open terminal and clone the project: `git clone git@github.com:Tufahel/book-dirt-bike-front-end.git`
+- cd into the directory `book-dirt-bike-front-end`
 
-1. Run
+**Prerequisites**
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+- You need to have `node.js` installed in your system
 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+**Install**
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+- On your terminal run : `npm i`
+- To run the app in the development mode : `npm start`
+- Launch the test runner : `npm test`
+- In case you run into any errors please raise an [issue](https://github.com/Tufahel/book-dirt-bike-front-end/issues).
 
-## Test/Deployment Actions
+## Authors
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+👤 **Joy Kwamboka** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-kwambiee-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/joy-kwamboka)
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-kwambiee-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/kwambiee)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-kwambiee-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kwambiee)
+
+👤 **Author : IROTORI BAROKA**
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-baroka-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://linkedin.com/in/baroka)
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-baroka--wp-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/baroka-wp)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-birotori-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/birotori)
+
+- Gmail: [![Gmail Badge](https://img.shields.io/badge/-baroka--Irotori-white?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:birotori@gmail.com)
+
+👤 **Roland Ossisa Yuma**
+
+>- GitHub: [@rolandfbk](https://github.com/rolandfbk)
+>- LinkedIn: [Roland Ossisa Yuma](https://linkedin.com/in/roland-ossisa-yuma)
+>- Twitter: [@rolandfbk](https://twitter.com/rolandfbk)
+
+👤 **Yasin Warsame**
+
+- GitHub: [@Yazino12](https://github.com/Yazino12)
+- Twitter: [@yasino24](https://twitter.com/yasino24)
+- LinkedIn: [yasin-warsame](https://linkedin.com/in/yasin-warsame-a4176217a)
+
+👤 **Author : GEDEON USHINDI**
+
+- GitHub: [@GedeonTS](https://github.com/GedeonTS)
+- Twitter: [@Gedeon191](https://twitter.com/Gedeon191)
+- LinkedIn: [Ushindi Gedeon](https://linkedin.com/in/ushindi-gedeon)
+
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Credits
+
+Design inspiration: [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- This was not possible without the help of [Microverse](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/hello_microverse_project.md).
+- The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)
