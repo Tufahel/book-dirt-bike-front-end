@@ -33,8 +33,10 @@ const Signup = () => {
 
   return (
     <>
-      <div className="bg-amber-500 w-full flex flex-col items-center justify-center h-screen">
-        <h1 className="">Sign Up</h1>
+      <div className="bg-cover absolute inset-0" style={{ backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKnl6f7EOWD6PNWN2E5ZDungUDJwk1YdfEA&usqp=CAU)' }} />
+      <div className="bg-lime-500 opacity-90 absolute inset-0" />
+      <div className="flex flex-col justify-center items-center absolute inset-0 mx-10 gap-6">
+        <h1 className="text-white">Sign Up</h1>
         <form
           className="signup-form bg-white shadow-md rounded px-8 pt-6 pb-8"
           onSubmit={handleLogin}
@@ -120,14 +122,14 @@ const Signup = () => {
           <small className="">{}</small>
           <div className="flex flex-col items-center justify-between gap-1">
             <button
-              className="bg-amber-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-lime-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Signup
             </button>
-            <p className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+            <p className="inline-block align-baseline font-bold text-sm text-lime-500 hover:text-lime-800">
               Already a member?
-              <NavLink className="" to="/login">
+              <NavLink className="text-lime-500 hover:text-lime-800" to="/login">
                 Login
               </NavLink>
             </p>

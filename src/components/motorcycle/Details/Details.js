@@ -7,9 +7,6 @@ const Details = () => {
   const motorcycles = JSON.parse(localStorage.getItem('bikes'));
   const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
   const filtered = motorcycles.filter((motorcycle) => motorcycle.id === bikeId);
-  console.log('all bikes: ', motorcycles);
-  console.log('filtered: ', filtered);
-  console.log('only id: ', bikeId);
 
   return (
     <>

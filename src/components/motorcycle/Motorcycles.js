@@ -19,6 +19,7 @@ const Motorcycles = () => {
 
   const handleDelete = (id) => {
     dispatch(deleteMotorcycle(id));
+    window.location.reload();
   };
 
   const responsive = {

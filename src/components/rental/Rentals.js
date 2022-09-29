@@ -3,22 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getRentals, deleteRental } from '../../redux/actions/Rental';
 
 function Rentals() {
-  // const bikeId = parseInt(localStorage.getItem('bikeid'), 10);
-  // const userId = parseInt(localStorage.getItem('userid'), 10);
   const dispatch = useDispatch();
-  // const reservations = JSON.parse(localStorage.getItem('rentals'));
   const res = useSelector((state) => state.RentalsReducer);
   const reservations = res.rentals;
-  console.log('hello');
-  // console.log('filtered', filtered1);
-  // console.log('filtered2', filtered2);
-  console.log('reserve', reservations.rentals);
   useEffect(() => {
     dispatch(getRentals());
   }, []);
 
   const handleDelete = (id) => {
     dispatch(deleteRental(id));
+    window.location.reload();
   };
 
   return (
