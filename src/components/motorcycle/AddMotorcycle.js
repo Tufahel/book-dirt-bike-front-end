@@ -83,6 +83,8 @@ const AddMotorcycle = () => {
               minLength="1"
               maxLength="100"
               onChange={handleChange}
+              rows={5}
+              cols={21}
               required
             />
             <br />
