@@ -8,6 +8,8 @@ const Motorcycle = (props) => {
     id,
   } = props;
 
+  const user = localStorage.getItem('user');
+
   const setBikeId = (id) => {
     localStorage.setItem('bikeid', id);
   };
@@ -25,7 +27,9 @@ const Motorcycle = (props) => {
         Details
       </NavLink>
 
+      {user && (
       <NavLink className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link" to="/addrental"> Rent</NavLink>
+      )}
 
     </div>
   );
