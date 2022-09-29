@@ -103,7 +103,7 @@ const Signup = () => {
             value={userRegister.date_of_birth}
           />
           { userRegister.password !== userRegister.confirm_password
-          && <div>{toast.error('password not matched')}</div>}
+          && <div>password not matched</div>}
           { loadingSignup && (
           <div className="">
             <div className="">

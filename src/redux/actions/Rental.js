@@ -1,4 +1,3 @@
-import { toast } from 'react-toastify';
 import {
   fetchRentalsData, addNewRental,
 } from '../../api/Api';
@@ -19,14 +18,12 @@ export const createRental = (rental, userId, bikeId) => (dispatch) => {
         type: actionTypes.RENTAL_CREATE_SUCCESS,
         payload: rental,
       });
-      toast.success('Rental created successfully');
     })
     .catch((error) => {
       dispatch({
         type: actionTypes.RENTAL_CREATE_FAILURE,
         payload: error,
       });
-      toast.error('Unable to create rental, please try again');
     });
 };
 
