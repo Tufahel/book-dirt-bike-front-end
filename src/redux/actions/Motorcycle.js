@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import {
   fetchMotorcyclesData, postNewMotorcycle, deleteMotorcycleData,
 } from '../../api/Api';
@@ -46,13 +47,15 @@ export const createMotorcycle = (bike, location) => (dispatch) => {
         type: actionTypes.MOTORCYCLE_CREATE_SUCCESS,
         payload: bike,
       });
-      location('/motorcycles');
+      toast.success('Motorcycle created successfully');
+      location('/');
     })
     .catch((error) => {
       dispatch({
         type: actionTypes.MOTORCYCLE_CREATE_FAILURE,
         payload: error,
       });
+      toast.error('Unable to create motorcycle, please try again');
     });
 };
 
@@ -63,11 +66,13 @@ export const deleteMotorcycle = (id) => (dispatch) => {
         type: actionTypes.MOTORCYCLE_DELETE_SUCCESS,
         payload: id,
       });
+      toast.success('Motorcycle deleted successfully');
     })
     .catch((error) => {
       dispatch({
         type: actionTypes.MOTORCYCLE_DELETE_FAILURE,
         payload: error,
       });
+      toast.error('Unable to delete motorcycle');
     });
 };

@@ -29,7 +29,6 @@ export const postSigninData = async (user) => {
       password: user.password,
     },
   });
-  console.log(res.data);
   return res;
 };
 

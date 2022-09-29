@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { fetchUserData, postSignupData, postSigninData } from '../../api/Api';
 
 export const actionTypes = {
@@ -33,6 +34,7 @@ export const signUp = (userData, location) => async (dispatch) => {
         type: actionTypes.SIGNUP_SUCCESS,
         payload: user,
       });
+      toast.success('Signup successful');
       location('/login');
     })
     .catch((error) => {
@@ -40,6 +42,7 @@ export const signUp = (userData, location) => async (dispatch) => {
         type: actionTypes.SIGNUP_FAILURE,
         payload: error,
       });
+      toast.error('Signup failed, please try again');
     });
 };
 
@@ -53,27 +56,18 @@ export const signIn = (userData, location) => async (dispatch) => {
         type: actionTypes.SIGNIN_SUCCESS,
         payload: res.data,
       });
-      // const token = JSON.stringify(res.data.user.id)
-      // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
-      // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
-      // console.log(token);
-
+      toast.success('Signin successful');
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data));
       localStorage.setItem('userid', JSON.stringify(res.data.user.id));
-      console.log(res.data.token);
-
-      // const token = JSON.stringify(res.data.user.id)
-      // + JSON.stringify(res.data.user.date_of_birth).replace(/['"-]+/g, '')
-      // + JSON.stringify(res.data.user.username).replace(/['"-]+/g, '');
-
-      location('/motorcycles');
+      location('/');
     })
     .catch((error) => {
       dispatch({
         type: actionTypes.SIGNIN_FAILURE,
         payload: error,
       });
+      toast.error('Signin failed, please try again');
     });
 };
 
@@ -87,10 +81,12 @@ export const signOut = (location) => (dispatch) => {
     dispatch({
       type: actionTypes.SIGNOUT_SUCCESS,
     });
-    location('/motorcycles');
+    toast.success('Signout successful');
+    location('/');
   } else {
     dispatch({
       type: actionTypes.SIGNOUT_FAILURE,
     });
+    toast.error('Signout failed, please try again');
   }
 };

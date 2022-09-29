@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './Motorcycles.css';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import { getMotorcycles, deleteMotorcycle } from '../../redux/actions/Motorcycle';
-import Navigation from '../Navigation/Navigation';
 import Motorcycle from './Motorcycle';
+import DirectionalButton from './button/DirectionalButton';
 
-function Motorcycles() {
+const Motorcycles = () => {
   const dispatch = useDispatch();
   const motorcycles = useSelector((state) => state.MotorcycleReducer);
   const navigate = useNavigate();
@@ -17,43 +19,73 @@ function Motorcycles() {
 
   const handleDelete = (id) => {
     dispatch(deleteMotorcycle(id));
+    window.location.reload();
   };
+
+  const responsive = {
+    0: { items: 1 },
+    640: { items: 2 },
+    768: { items: 3 },
+    1024: { items: 4 },
+  };
+
+  const items = motorcycles.bikes?.map((motorcycle) => (
+    <div key={motorcycle.id} className="p-4">
+      <div className="flex flex-wrap gap-10">
+        <img className="rounded-full w-60 h-60" src={motorcycle.image} alt="bike" />
+        <div className="flex flex-col">
+          <h2 className="uppercase">{motorcycle.name}</h2>
+          <p className="">
+            Details: &nbsp;
+            {motorcycle.details}
+          </p>
+          <p className="">
+            Rent Price: &nbsp;
+            {motorcycle.price}
+          </p>
+          <div className="flex gap-4">
+            {user && (
+            <button className="delete text-red font-bold p-4 rounded-full" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
+            )}
+            <Motorcycle
+              key={motorcycle.bike_id}
+              id={motorcycle.bike_id}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ));
 
   return (
     <>
-      <Navigation />
-      <div className="bike">
-        {motorcycles.bikes?.map((motorcycle) => (
-          <button
-            key={motorcycle.id}
-            type="button"
-            className="bike__button"
-          >
-            <div key={motorcycle.id} className="bike__container">
-              <div className="bike__image">
-                <img className="imagebike" src={motorcycle.image} alt="bike" />
-              </div>
-              <div className="bike__details">
-                <h3>{motorcycle.name}</h3>
-                <p>{motorcycle.details}</p>
-                <p>{motorcycle.price}</p>
-                {user && (
-                  <button type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
-                )}
-                <>
-                  <Motorcycle
-                    key={motorcycle.bike_id}
-                    id={motorcycle.bike_id}
-                  />
-                </>
-              </div>
-            </div>
-          </button>
-        ))}
+      <div className="h-screen flex flex-col items-center justify-center p-5">
+        <div className="flex flex-col">
+          <div className="flex flex-col">
+            <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirty Bikes</h1>
+            <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
+          </div>
+        </div>
+        {/* <div className="flex flex-wrap box">
+          {motorcycles.bikes?.map((motorcycle) => (
+
+          ))}
+        </div> */}
+
+        <AliceCarousel
+          mouseTracking
+          disableDotsControls
+          renderPrevButton={({ isDisabled }) => <DirectionalButton twClasses="absolute top-28 left-0" left disabled={isDisabled} />}
+          renderNextButton={({ isDisabled }) => <DirectionalButton twClasses="absolute top-28 right-0" disabled={isDisabled} />}
+          responsive={responsive}
+          items={items}
+          className="bg-red-500"
+        />
 
         {
         user && (
           <button
+            className="addbike text-white bg-primary font-bold py-4 px-8 rounded-full"
             type="button"
             onClick={() => navigate('/addmotorcycle')}
           >
@@ -66,6 +98,6 @@ function Motorcycles() {
 
     </>
   );
-}
+};
 
 export default Motorcycles;

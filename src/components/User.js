@@ -5,9 +5,6 @@ import { getUsers } from '../redux/actions/User';
 export default function User() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.UsersReducer);
-  // console.log(users);
-  // dispatch(getUsers());
-
   useEffect(() => {
     dispatch(getUsers());
   }, []);

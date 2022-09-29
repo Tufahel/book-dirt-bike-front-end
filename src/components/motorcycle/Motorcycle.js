@@ -1,30 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import './Motorcycles.css';
 
 const Motorcycle = (props) => {
   const {
     id,
   } = props;
 
+  const user = localStorage.getItem('user');
+
   const setBikeId = (id) => {
     localStorage.setItem('bikeid', id);
   };
 
   return (
-    <div>
-      <button
+    <div className="pt-4 flex flex-col">
+      <NavLink
         key={id}
-        type="button"
-        className="btn"
         onClick={() => {
           setBikeId(id);
         }}
+        to="/details"
+        className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
       >
-        <NavLink to="/details" className="">
-          Details
-        </NavLink>
-      </button>
+        Details
+      </NavLink>
+
+      {user && (
+      <NavLink className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link" to="/addrental"> Rent</NavLink>
+      )}
 
     </div>
   );

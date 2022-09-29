@@ -1,4 +1,4 @@
-.sidenav {
+/* .sidenav {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +7,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height: 100vh;
   position: fixed;
-}
+} */
 
 ul {
   list-style: none;
@@ -24,6 +24,10 @@ ul {
   font-weight: 500;
 }
 
+.text-primary {
+  color: #97bf0f !important;
+}
+
 .link {
   text-decoration: none;
   color: #000;
@@ -31,12 +35,12 @@ ul {
   font-weight: 500;
 }
 
-.divider {
+/* .divider {
   display: flex;
   flex-direction: column;
   gap: 50px;
-}
+} */
 
-.social {
+/* .social {
   margin-top: 25rem;
-}
+} */

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThreeDots } from 'react-loader-spinner';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { signUp } from '../../redux/actions/User';
-import Navigation from '../Navigation/Navigation';
 import './Signup.css';
 
 const Signup = () => {
@@ -33,21 +33,22 @@ const Signup = () => {
 
   return (
     <>
-      <Navigation />
-      <div className="mainSign">
-        <h1 className="">Sign Up</h1>
+      <div className="bg-cover absolute inset-0" style={{ backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKnl6f7EOWD6PNWN2E5ZDungUDJwk1YdfEA&usqp=CAU)' }} />
+      <div className="bg-lime-500 opacity-90 absolute inset-0" />
+      <div className="flex flex-col justify-center items-center absolute inset-0 mx-10 gap-6">
+        <h1 className="text-white">Sign Up</h1>
         <form
-          className="signup-form"
+          className="signup-form bg-white shadow-md rounded px-8 pt-6 pb-8"
           onSubmit={handleLogin}
         >
           { errorSignup && (
           <div className="">
-            <p className="">Username/Email already exist</p>
+            <p className="">{toast.error('Unable to Login, Please check yor details')}</p>
           </div>
           )}
           <input
             onChange={handleOnChange}
-            className=""
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="text"
             name="username"
             placeholder="Username"
@@ -56,7 +57,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className=""
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="text"
             name="full_name"
             placeholder="Full Name"
@@ -65,7 +66,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className=""
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="email"
             name="email"
             placeholder="Email"
@@ -74,7 +75,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="w-full sm:w-3/4 border-1 border-main  focus:border-main"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             name="password"
             placeholder="Password"
@@ -84,7 +85,7 @@ const Signup = () => {
           />
           <input
             onChange={handleOnChange}
-            className="w-full sm:w-3/4 border-1 border-main  focus:border-main"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             name="confirm_password"
             placeholder="Confirm Password"
@@ -92,9 +93,9 @@ const Signup = () => {
             minLength="6"
             value={userRegister.confirm_password}
           />
-          <textarea
+          <input
             onChange={handleOnChange}
-            className="w-full sm:w-3/4 border-1 border-main focus:border-main"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
             type="date"
             name="date_of_birth"
             placeholder="Date"
@@ -102,7 +103,7 @@ const Signup = () => {
             value={userRegister.date_of_birth}
           />
           { userRegister.password !== userRegister.confirm_password
-          && <div>password not matched</div>}
+          && <div>{toast.error('password not matched')}</div>}
           { loadingSignup && (
           <div className="">
             <div className="">
@@ -119,18 +120,20 @@ const Signup = () => {
           </div>
           )}
           <small className="">{}</small>
-          <p className="">
-            Already a member?
-            <NavLink className="" to="/login">
-              Login
-            </NavLink>
-          </p>
-          <button
-            className=""
-            type="submit"
-          >
-            Signup
-          </button>
+          <div className="flex flex-col items-center justify-between gap-1">
+            <button
+              className="bg-lime-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Signup
+            </button>
+            <p className="inline-block align-baseline font-bold text-sm text-lime-500 hover:text-lime-800">
+              Already a member?
+              <NavLink className="text-lime-500 hover:text-lime-800" to="/login">
+                Login
+              </NavLink>
+            </p>
+          </div>
         </form>
       </div>
     </>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createMotorcycle } from '../../redux/actions/Motorcycle';
-import Navigation from '../Navigation/Navigation';
 import './Motorcycles.css';
 
 const AddMotorcycle = () => {
@@ -26,22 +25,20 @@ const AddMotorcycle = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createMotorcycle(motorcycle, navigate('/motorcycles'), e));
+    dispatch(createMotorcycle(motorcycle, navigate('/'), e));
   };
 
   return (
     <>
-      <Navigation />
-      <div className="form-section">
+      <div className="w-full flex flex-col items-center justify-center h-screen">
         <section className="">
-          <p className="text-center" style={{ color: 'rgb(100 116 139)' }}>Add Bike </p>
-          <hr />
+          <p className="text-center text-4xl text-primary font-bold">Add Bike </p>
           <form
             onSubmit={handleSubmit}
-            className="form-page"
+            className="bg-white shadow-lg rounded px-8 pt-6 pb-8"
           >
             <input
-              className="input-field"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
               placeholder="Bike Name"
               type="text"
               name="bike_name"
@@ -51,10 +48,10 @@ const AddMotorcycle = () => {
               value={motorcycle.bike_name}
               required
             />
-
+            <br />
             <input
-              className="input-field"
-              placeholder="Price per hour"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+              placeholder="Price per hour in $"
               type="number"
               name="amount"
               value={motorcycle.amount}
@@ -63,21 +60,22 @@ const AddMotorcycle = () => {
               onChange={handleChange}
               required
             />
-
+            <br />
             <input
-              className="input-field"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
               placeholder="image"
               type="url"
               name="image"
+              accept="image/*"
               value={motorcycle.image}
               minLength="1"
               maxLength="100"
               onChange={handleChange}
               required
             />
-
+            <br />
             <textarea
-              className="input-field"
+              className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
               placeholder="Details"
               type="text"
               name="details"
@@ -85,10 +83,13 @@ const AddMotorcycle = () => {
               minLength="1"
               maxLength="100"
               onChange={handleChange}
+              rows={5}
+              cols={21}
               required
             />
+            <br />
             <button
-              className=""
+              className="createbike text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Create Bike
