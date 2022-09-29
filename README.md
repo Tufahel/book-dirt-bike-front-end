@@ -19,9 +19,9 @@
 - Redux
 
 ## Back-end repo
-[backend repo](https://github.com/Tufahel/book-dirt-bike-back-end)
+[Backend Repo](https://github.com/Tufahel/book-dirt-bike-back-end)
 
-**Live**
+## Live App
 
 - Live app: [Dirt-Bike](https://incredible-unicorn-5f0c7d.netlify.app/)
 
