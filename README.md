@@ -1,12 +1,12 @@
-# Yatch House
+# Dirt Bikes
 
-> Yatch house is an application to book houses for rent like airbnb. The particularity is that the guests will live with their host to discover the local culture and customs. The user will be able to choose a house according to his preferences and book a period during which he will live with his guest.
+> Dirt Bikes is an application to book dirt bikes for rent. The user will be able to choose a bike according to his preferences and book a period during which he will use the desired bike.
 
 <h2 align="center">
   Demo 📝
 </h2>
 
-![image](https://user-images.githubusercontent.com/43172164/192555510-3290ed04-e641-4637-9b6f-50978a603278.png)
+![image]()
 
 
 ## Built With
@@ -19,11 +19,11 @@
 - Redux
 
 ## Back-end repo
-[backend repo](https://github.com/Baroka-wp/yatch_house)
+[backend repo](https://github.com/Tufahel/book-dirt-bike-back-end)
 
 **Live**
 
-- Live app: [YATCH-HOUSE](https://yatch-house.netlify.app/)
+- Live app: [Dirt-Bike]()
 
 
 ## Getting Started
@@ -48,42 +48,23 @@ To get a local copy up and running follow these setup steps.
 
 ## Authors
 
-👤 **Joy Kwamboka** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+👤 **Toyosi Taiwo**
 
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-kwambiee-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/joy-kwamboka)
+- GitHub: [@Yorsyboy](https://github.com/Yorsyboy)
+- Twitter: [@tboytaiwo](https://twitter.com/Tboytaiwo)
+- LinkedIn: [Toyosi Taiwo](https://linkedin.com/in/taiwo-toyosi)
 
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-kwambiee-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/kwambiee)
+👤 **Tufahel Ahmed**
 
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-kwambiee-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kwambiee)
+- GitHub: [@Tufahel](https://github.com/Tufahel)
+- Twitter: [@TufahelAhmed](https://twitter.com/TufahelAhmed)
+- LinkedIn: [@Tufahel-Ahmed](https://www.linkedin.com/in/tufahel-ahmed/)
 
-👤 **Author : IROTORI BAROKA**
+👤 **Nii Amanor Djoleto**
 
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-baroka-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://linkedin.com/in/baroka)
-
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-baroka--wp-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/baroka-wp)
-
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-birotori-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/birotori)
-
-- Gmail: [![Gmail Badge](https://img.shields.io/badge/-baroka--Irotori-white?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:birotori@gmail.com)
-
-👤 **Roland Ossisa Yuma**
-
->- GitHub: [@rolandfbk](https://github.com/rolandfbk)
->- LinkedIn: [Roland Ossisa Yuma](https://linkedin.com/in/roland-ossisa-yuma)
->- Twitter: [@rolandfbk](https://twitter.com/rolandfbk)
-
-👤 **Yasin Warsame**
-
-- GitHub: [@Yazino12](https://github.com/Yazino12)
-- Twitter: [@yasino24](https://twitter.com/yasino24)
-- LinkedIn: [yasin-warsame](https://linkedin.com/in/yasin-warsame-a4176217a)
-
-👤 **Author : GEDEON USHINDI**
-
-- GitHub: [@GedeonTS](https://github.com/GedeonTS)
-- Twitter: [@Gedeon191](https://twitter.com/Gedeon191)
-- LinkedIn: [Ushindi Gedeon](https://linkedin.com/in/ushindi-gedeon)
-
+- Github: [@Ramrod433](https://github.com/ramrod433)
+- Twitter: [@_Djoleto](https://twitter.com/_djoleto_)
+- LinkedIn: [Nii Djoleto](https://www.linkedin.com/in/nii-amanor-djoleto)
 
 
 ## 🤝 Contributing
