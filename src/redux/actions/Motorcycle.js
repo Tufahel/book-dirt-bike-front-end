@@ -40,7 +40,6 @@ export const getMotorcycles = () => async (dispatch) => {
 export const createMotorcycle = (bike, location) => (dispatch) => {
   const user = signIn();
   const userId = localStorage.getItem('userid', user);
-  // console.log('user: ', userId);
   postNewMotorcycle(bike, userId)
     .then((bike) => {
       dispatch({
@@ -55,7 +54,6 @@ export const createMotorcycle = (bike, location) => (dispatch) => {
         type: actionTypes.MOTORCYCLE_CREATE_FAILURE,
         payload: error,
       });
-      toast.error('Unable to create motorcycle, please try again');
     });
 };
 

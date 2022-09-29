@@ -54,36 +54,5 @@ const Details = () => {
     </>
   );
 };
-// function Details() {
-//   const motorcycles = useSelector((state) => state.MotorcyclesReducer);
-//   const dispatch = useDispatch();
-//   useEffect(() => {
-//     dispatch(getMotorcycles());
-//   }, []);
-//   return (
-//     <div className="content">
-//       <h1>Details</h1>
-//       {motorcycles.value?.map((motorcycle) => (
-//         <div key={motorcycle.id}>
-//           <h3>{motorcycle.name}</h3>
-//           <p>{motorcycle.details}</p>
-//           <p>{motorcycle.price}</p>
-//         </div>
-//       ))}
-//       {/* {motorcycles.value?.map((motorcycle) => (
-//         <div key={motorcycle.id} className="bike__container">
-//           <div className="bike__image">
-//             <img src={motorcycle.image} alt="bike" />
-//           </div>
-//           <div className="bike__details">
-//             <h3>{motorcycle.name}</h3>
-//             <p>{motorcycle.details}</p>
-//             <p>{motorcycle.price}</p>
-//           </div>
-//         </div>
-//       ))} */}
-//     </div>
-//   );
-// }
 
 export default Details;

@@ -19,7 +19,7 @@ const Motorcycles = () => {
 
   const handleDelete = (id) => {
     dispatch(deleteMotorcycle(id));
-    window.location.reload();
+    window.location.reload(true);
   };
 
   const responsive = {
@@ -66,11 +66,6 @@ const Motorcycles = () => {
             <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
           </div>
         </div>
-        {/* <div className="flex flex-wrap box">
-          {motorcycles.bikes?.map((motorcycle) => (
-
-          ))}
-        </div> */}
 
         <AliceCarousel
           mouseTracking

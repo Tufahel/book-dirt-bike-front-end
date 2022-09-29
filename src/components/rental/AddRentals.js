@@ -26,7 +26,6 @@ const AddRental = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createRental(rental, userId, recentId));
-    console.log(recentId);
     navigate('/rentals');
   };
 
