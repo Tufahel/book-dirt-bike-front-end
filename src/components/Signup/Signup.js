@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThreeDots } from 'react-loader-spinner';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { signUp } from '../../redux/actions/User';
 import './Signup.css';
 
@@ -40,7 +41,7 @@ const Signup = () => {
         >
           { errorSignup && (
           <div className="">
-            <p className="">Username/Email already exist</p>
+            <p className="">{toast.error('Unable to Login, Please check yor details')}</p>
           </div>
           )}
           <input
@@ -100,7 +101,7 @@ const Signup = () => {
             value={userRegister.date_of_birth}
           />
           { userRegister.password !== userRegister.confirm_password
-          && <div>password not matched</div>}
+          && <div>{toast.error('password not matched')}</div>}
           { loadingSignup && (
           <div className="">
             <div className="">

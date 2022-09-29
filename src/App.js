@@ -1,16 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { Provider } from 'react-redux';
-// import store from './redux/configureStore';
-// import User from './components/User';
-// import Motorcycle from './components/Motorcycle';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Motorcycles from './components/motorcycle/Motorcycles';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Navigation from './components/Navigation/Navigation';
 import AddMotorcycle from './components/motorcycle/AddMotorcycle';
 import Rentals from './components/rental/Rentals';
-// import Home from './components/Home';
 import AddRental from './components/rental/AddRentals';
 import Details from './components/motorcycle/Details/Details';
 
@@ -33,6 +30,19 @@ const App = () => (
         </Routes>
       </main>
     </Router>
+    <aside>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </aside>
   </div>
 );
 
