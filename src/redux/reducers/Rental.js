@@ -27,7 +27,7 @@ const RentalsReducer = (state = initialState, action) => {
     case actionTypes.RENTAL_CREATE_SUCCESS:
       return {
         ...state,
-        rentals: [...state.rentals, action.payload],
+        rentals: [...state.rentals, [action.payload]],
         loading: false,
         error: null,
       };
