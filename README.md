@@ -83,3 +83,7 @@ Give a ⭐️ if you like this project!
 
 - This was not possible without the help of [Microverse](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/hello_microverse_project.md).
 - The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
