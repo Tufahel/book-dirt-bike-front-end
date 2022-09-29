@@ -53,8 +53,8 @@ const Login = () => {
           { errorSignin && (
             <p className="text-red-500 font-italic">Invalid email/password</p>
           )}
-          <input onChange={handleOnChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="username" id="signup-useername-field" placeholder="Username" required />
-          <input onChange={handleOnChange} className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" id="login-password-field" placeholder="Password" required />
+          <input onChange={handleOnChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="username" id="signup-useername-field" aria-label="username-input" placeholder="Username" required />
+          <input onChange={handleOnChange} className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" id="login-password-field" aria-label="password-input" placeholder="Password" required />
           <small className="">{}</small>
           <div className="flex flex-col items-center justify-between gap-1">
             <button

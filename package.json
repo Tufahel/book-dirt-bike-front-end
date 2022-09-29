@@ -23,6 +23,7 @@
     "react-toastify": "^9.0.8",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
