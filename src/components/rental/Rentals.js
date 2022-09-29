@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getRentals } from '../../redux/actions/Rental';
 
 function Rentals() {
-  const recentImg = localStorage.getItem('recentbikeimg');
   const dispatch = useDispatch();
   const res = useSelector((state) => state.RentalsReducer);
   const reservations = res.rentals;
@@ -22,21 +21,33 @@ function Rentals() {
           >
             <div key={reservation.id} className="">
               <div className="flex-row gap-4 p-4 card">
-                <img className="rounded-full w-60 h-60" src={recentImg} alt="bike" />
-                <b>Reservation id</b>
-                <p className="">{reservation.id}</p>
-                {' '}
-                <b>User id</b>
-                <p>{reservation.user_id}</p>
-                {' '}
-                <b>Bike id</b>
-                <p>{reservation.motorcycle_id}</p>
-                {' '}
-                <b>Book date</b>
-                <p>{reservation.book_date}</p>
-                {' '}
-                <b>Return date</b>
-                <p className="">{reservation.return_date}</p>
+                <img className="rounded w-30 h-20" src="https://img.freepik.com/premium-vector/motorcycle-logo-black-background-modern-racing-superbike-silhouette_304830-257.jpg?w=740" alt="bike" />
+                <div>
+                  <p className="">
+                    <b>Reservation id:</b>
+                    {' '}
+                    {reservation.id}
+                  </p>
+                  <p>
+                    {' '}
+                    <b>User id:</b>
+                    {' '}
+                    {reservation.user_id}
+                  </p>
+                  <p>
+                    <b>Bike id:</b>
+                    {' '}
+                    {reservation.motorcycle_id}
+                  </p>
+                </div>
+                <div>
+                  {' '}
+                  <b>Book date</b>
+                  <p>{reservation.book_date}</p>
+                  {' '}
+                  <b>Return date</b>
+                  <p className="">{reservation.return_date}</p>
+                </div>
               </div>
             </div>
           </div>

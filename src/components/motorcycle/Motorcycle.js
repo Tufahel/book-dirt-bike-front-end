@@ -5,7 +5,7 @@ import './Motorcycles.css';
 
 const Motorcycle = (props) => {
   const {
-    id, image,
+    id,
   } = props;
 
   const user = localStorage.getItem('user');
@@ -13,7 +13,6 @@ const Motorcycle = (props) => {
   const setBikeId = (id) => {
     localStorage.setItem('bikeid', id);
     localStorage.setItem('recentbikeid', id);
-    localStorage.setItem('recentbikeimg', image);
   };
 
   return (
@@ -48,7 +47,6 @@ const Motorcycle = (props) => {
 
 Motorcycle.propTypes = {
   id: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
 };
 
 export default Motorcycle;

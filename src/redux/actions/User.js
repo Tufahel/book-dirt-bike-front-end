@@ -79,7 +79,6 @@ export const signOut = (location) => (dispatch) => {
     localStorage.removeItem('bikes');
     localStorage.removeItem('bikeid');
     localStorage.removeItem('recentbikeid');
-    localStorage.removeItem('recentbikeimg');
     dispatch({
       type: actionTypes.SIGNOUT_SUCCESS,
     });

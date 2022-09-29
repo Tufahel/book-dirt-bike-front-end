@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:3000/';
+const URL = 'https://incredible-unicorn-5f0c7d.netlify.app';
 
 export const fetchUserData = async () => {
   const res = await fetch(`${URL}/api/users`)
