@@ -76,11 +76,11 @@ function Navigation() {
               </ul>
             </div>
             <div className="flex flex-col gap-1 items-center absolute bottom-0">
-              <ul className="flex flex-col gap-1 items-center ">
-                <li>
+              <ul className="flex flex-col gap-1">
+                <li className="text-sm">
                   Email: microver@mail.com
                 </li>
-                <li>
+                <li className="text-sm">
                   Call: 123-456-7890
                 </li>
               </ul>

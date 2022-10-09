@@ -62,7 +62,7 @@ const Motorcycles = () => {
       <div className="h-screen flex flex-col items-center justify-center p-5">
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirty Bikes</h1>
+            <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirt Bikes</h1>
             <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
           </div>
         </div>
@@ -80,7 +80,7 @@ const Motorcycles = () => {
         {
         user && (
           <button
-            className="addbike text-white bg-primary font-bold py-4 px-8 rounded-full"
+            className="addbike text-white bg-primary font-bold py-2 px-8 rounded-full"
             type="button"
             onClick={() => navigate('/addmotorcycle')}
           >

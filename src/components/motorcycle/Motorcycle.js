@@ -16,14 +16,14 @@ const Motorcycle = (props) => {
   };
 
   return (
-    <div className="pt-4 flex flex-col">
+    <div className="flex flex-col">
       <NavLink
         key={id}
         onClick={() => {
           setBikeId(id);
         }}
         to="/details"
-        className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
+        className="no-underline text-xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
       >
         Details
       </NavLink>
@@ -35,7 +35,7 @@ const Motorcycle = (props) => {
           setBikeId(id);
         }}
         to="/addrental"
-        className="no-underline text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
+        className="no-underline text-xl font-extrabold py-2 px-4 rounded-full text-primary d-link"
       >
         Rent
       </NavLink>
