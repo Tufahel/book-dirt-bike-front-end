@@ -6,7 +6,7 @@
   Demo Pic📝
 </h2>
 
-![image](/src/components/images/WhatsApp%20Image%202022-09-29%20at%2014.17.39.jpeg)
+![image](/src/components/images/dirt_bike_book.png)
 
 
 ## Built With
