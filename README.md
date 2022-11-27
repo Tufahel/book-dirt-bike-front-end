@@ -18,7 +18,7 @@
 - React router
 - Redux
 
-## Back-end repo
+## Backend Repo
 [Backend Repo](https://github.com/Tufahel/book-dirt-bike-back-end)
 
 ## Live App

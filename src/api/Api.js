@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://calm-brushlands-14039.herokuapp.com';
+const URL = 'https://book-dirt-bike.onrender.com';
 
 export const fetchUserData = async () => {
   const res = await fetch(`${URL}/api/users`)
