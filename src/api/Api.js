@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://book-dirt-bike.onrender.com';
+const URL = 'https://book-dirt-bike-uam5.onrender.com';
 
 export const fetchUserData = async () => {
   const res = await fetch(`${URL}/api/users`)
