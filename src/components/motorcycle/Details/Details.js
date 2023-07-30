@@ -13,7 +13,7 @@ const Details = () => {
       <div className="relative flex flex-col w-full h-screen lg:py-12">
         <div className=" ">
           {filtered.map((motorcycle) => (
-            <div className="flex flex-col lg:flex-row grow h-full lg:pt-20 lg:pb-10" key={motorcycle.id}>
+            <div className="flex flex-col items-center lg:flex-row grow h-full lg:pt-20 lg:pb-10" key={motorcycle.id}>
               <div className="grow lg:w-2/5 flex items-center justify-center px-10 rounded-full aspect-square">
                 <img
                   className="object-cover block rounded-full aspect-square w-full"
@@ -33,10 +33,10 @@ const Details = () => {
                 <p className="mb-10 text-center lg:text-right">
                   {motorcycle.details}
                 </p>
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center">
                   <NavLink className="no-underline flex items-center justify-center gap-3 text-2xl font-extrabold py-2 px-4 rounded-full text-primary d-link" to="/addrental"> Rent</NavLink>
                   <Rating
-                    className="text-2xl font-extrabold py-2 px-4 ml-14"
+                    className="text-2xl font-extrabold py-2 px-4"
                     step={1}
                     initialRating={4}
                     readonly
