@@ -14,14 +14,14 @@ const Details = () => {
         <div className=" ">
           {filtered.map((motorcycle) => (
             <div className="flex flex-col items-center lg:flex-row grow h-full lg:pt-20 lg:pb-10" key={motorcycle.id}>
-              <div className="grow lg:w-2/5 flex items-center justify-center px-10 rounded-full aspect-square">
+              <div className="grow lg:w-2/5 px-4">
                 <img
-                  className="object-cover block rounded-full aspect-square w-full"
+                  className="object-contain rounded-full aspect-square"
                   src={motorcycle.image}
                   alt={motorcycle.name}
                 />
               </div>
-              <div className="flex flex-col w-full lg:w-72 lg:mr-20 py-10 px-10 lg:px-0">
+              <div className="flex flex-col lg:w-72 lg:mr-20 py-10 px-10 lg:px-0">
                 <h1 className="uppercase text-center lg:text-right font-bold text-2xl">
                   {' '}
                   {motorcycle.bike_name}
