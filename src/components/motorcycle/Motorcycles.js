@@ -32,10 +32,10 @@ const Motorcycles = () => {
   const items = motorcycles.bikes?.map((motorcycle) => (
     <div key={motorcycle.id} className="p-4">
       <div className="flex flex-wrap gap-10">
-        <img className="rounded-full w-60 h-60" src={motorcycle.image} alt="bike" />
+        <img className="rounded-full w-52 h-52" src={motorcycle.image} alt="bike" />
         <div className="flex flex-col">
-          <h2 className="uppercase">{motorcycle.name}</h2>
-          <p className="">
+          <h2 className="h-20">{motorcycle.name}</h2>
+          <p className="w-48 truncate h-10">
             Details: &nbsp;
             {motorcycle.details}
           </p>
@@ -45,7 +45,7 @@ const Motorcycles = () => {
           </p>
           <div className="flex gap-4">
             {user && (
-            <button className="delete text-red font-bold p-4 rounded-full" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
+            <button className="delete text-red font-bold p-2 rounded-full" type="button" onClick={() => handleDelete(motorcycle.bike_id)}>DELETE</button>
             )}
             <Motorcycle
               key={motorcycle.bike_id}
@@ -64,6 +64,7 @@ const Motorcycles = () => {
           <div className="flex flex-col">
             <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirt Bikes</h1>
             <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
+            <p className="block mt-0 lg:inline-block lg:mt-0 text-red-500 text-sm text-center">Just a bit! Backend server is a bit slow for running on render free service.</p>
           </div>
         </div>
 

@@ -13,7 +13,7 @@ function Rentals() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <h1 className="text-4xl text-primary font-bold">Reservations</h1>
+        <h1 className="text-4xl text-primary font-bold py-10">Reservations</h1>
         {reservations.rentals?.map((reservation) => (
           <div
             key={reservation.id}
