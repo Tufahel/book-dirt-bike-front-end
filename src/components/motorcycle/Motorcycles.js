@@ -64,6 +64,7 @@ const Motorcycles = () => {
           <div className="flex flex-col">
             <h1 className="flex flex-col justify-center items-center w-full text-4xl font-bold">Welcome to Dirt Bikes</h1>
             <p className="flex flex-col justify-center items-center w-full text-2xl">We are the best bike rental company in the world</p>
+            <p className="block mt-0 lg:inline-block lg:mt-0 text-red-500 text-sm text-center">Just a bit! Backend server is a bit slow for running on render free service.</p>
           </div>
         </div>
 
